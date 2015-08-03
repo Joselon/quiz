@@ -40,9 +40,11 @@ sequelize.sync().then(function() {
   Quiz.count().then(function (count){
    if(count==0) { // la tabla se inicia solo si esta vacia
      Quiz.create({ pregunta: 'Capital de Italia',
-		   respuesta: 'Roma'});
+		   respuesta: 'Roma',
+		   tema: 'humanidades'});
      Quiz.create({ pregunta: 'Capital de Portugal',
-		   respuesta: 'Lisboa'})
+		   respuesta: 'Lisboa',
+		   tema: 'humanidades'})
    .then(function(){console.log('Base de flatos inicial izada')});
   };
  });
