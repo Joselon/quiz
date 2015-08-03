@@ -6,11 +6,11 @@ var quizController = require('../controllers/quiz_controller');
 /* GET home page. */
 router.get('/', function(req, res) {
   console.log("ESTOY EN INDEX");
-  res.render('index', { title: 'Quiz' });
+  res.render('index', { title: 'Quiz',errors:[] });
 });
 
 router.get('/author', function(req, res) {
-  res.render('author');	
+  res.render('author',{errors:[]});	
 });
 
 //Autoload de comandos con :quizId
