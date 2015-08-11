@@ -17,9 +17,9 @@ models.Quiz.findAll({
 	 function(quizes) {
 		stats.nQuizes=quizes.length;
 		for (var i=0;i<quizes.length;i++){
-		  if (quizes[i].Comments.length-1>0){
+		  if (quizes[i].Comments.length>0){
 			console.log(quizes[i].Comments.length +' comentarios en '+quizes[i].pregunta);
-			stats.nComments += (quizes[i].Comments.length)-1;
+			stats.nComments += (quizes[i].Comments.length);
 			stats.nQuizConComment++;
 		  }else {stats.nQuizSinComment++;}
 		}
