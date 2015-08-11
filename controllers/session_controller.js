@@ -7,6 +7,7 @@ exports.loginRequired=function(req,res,next){
 	}
 };
 
+
 // GET /login --Formulario de login
 exports.new=function(req,res) {
 	var errors=req.session.errors || {};
@@ -30,7 +31,8 @@ exports.create=function(req,res){
 
 		// Crear req.session.user y guardar campos id y username
 		// La sesión se define por la existencia de : req.session.user
-		req.session.user={id:user.id,username:user.username};
+		req.session.user={id:user.id,username:user.username, loginDate:(new Date()).getTime()};
+		console.log(req.session.user.username+' conectado a las: '+req.session.user.loginDate);
 
 		res.redirect(req.session.redir.toString()); //redireccion a path anterior a login
 	});

@@ -39,6 +39,18 @@ app.use(function(req,res,next){
    next();
 });
 
+//MW para tiempo de inactividad
+app.use(function(req,res,next){
+	var marcaTiempo=(new Date).getTime();
+
+	if (req.session.user && (marcaTiempo- req.session.user.loginDate)>120000){
+	 delete req.session.user;
+	 delete req.session.loginDate;
+	 res.redirect('/login');
+	}
+	next();
+});
+
 app.use('/', routes);
 
 // catch 404 and forward to error handler
