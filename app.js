@@ -48,6 +48,7 @@ app.use(function(req,res,next){
 	 delete req.session.loginDate;
 	 res.redirect('/login');
 	}
+	req.session.user.loginDate=marcaTiempo;
 	next();
 });
 
