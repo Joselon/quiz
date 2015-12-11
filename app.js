@@ -45,7 +45,7 @@ app.use(function(req,res,next){
 
 	if (req.session.user && (marcaTiempo- req.session.user.loginDate)>120000){
 	 delete req.session.user;
-	 delete req.session.loginDate;
+	 //delete req.session.loginDate;
 	 res.redirect('/login');
 	}
 	else{ if(req.session.user){req.session.user.loginDate=marcaTiempo;}}
