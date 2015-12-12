@@ -48,7 +48,9 @@
 		<footer class='main' id='f1'>
 			<a href='http://es.wikipedia.org/wiki/Quiz'>¿Qué es un Quiz?</a>
 			</p>
-			<a href='https://github.com/Joselon/quiz'>Página Github del proyecto</a>
+                        <%if(session.user){%>
+                        <a href='https://github.com/Joselon/quiz'>Página Github del proyecto</a>
+                        <%}%>
 		</footer>
 	</div>		
   </body>
