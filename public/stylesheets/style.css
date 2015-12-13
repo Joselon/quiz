@@ -8,7 +8,8 @@ section > div {padding: 20px;background: #f61;}
 header {background: #f61; text-align: center;}
 nav {background: #f61;}
 section {background: #f61; text-align: center;overflow:auto;word-wrap: break-word;}
-#tabpreg,#preg  {background: #f61;}
+#tabpreg,#preg,#Tema  {background: #f61;}
+#botoneditar,#botonborrar,#BotonCrea {background: #f61;}
 input,form  {background: #f61;}
 footer {background: #f61; text-align: center;}
 nav span {margin: 0px 10px 0px 0px;}
