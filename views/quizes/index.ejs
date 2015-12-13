@@ -1,6 +1,6 @@
-<table>
+<table id="tabpreg">
 <% var i; for (i=0;i<quizes.length; i++) { %>
-	<tr><td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td>
+	<tr><td><a id="preg" href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td>
 	    <td id="Tema">[<%= quizes[i].tema %>]</td>
 	    <%if (session.user) {%>
 	      <td><a href="quizes/<%= quizes[i].id %>/edit"><button>editar</button></a></td>
