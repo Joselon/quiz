@@ -1,7 +1,7 @@
 <form method="get" action="/quizes/<%= quiz.id %>/answer">
 
  Pregunta: <%=quiz.pregunta%> <p>
- <input type="text" name="respuesta" value="Respuesta"/>
+ <input type="text" name="respuesta" value='Respuesta' onclick="if (this.value=='Respuesta') this.value='';"/>
  <input type="submit" value="Enviar">
 </form>
 
