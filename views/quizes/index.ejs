@@ -1,4 +1,11 @@
 <table id="tabpreg">
+<form method='get' action='/quizes'>
+ Buscar Preguntas: <input type="text"  name="search"/>
+ <input type="submit" value="Buscar"/>
+</from>
+<%if(session.user){%>
+<a id="BotonCrea" href="/quizes/new"><button type="button">Crear pregunta</button></a>
+<%}%>
 <% var i; for (i=0;i<quizes.length; i++) { %>
 	<tr><td id="preg"><a  href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td>
 	    <td id="Tema">[<%= quizes[i].tema %>]</td>
@@ -16,13 +23,3 @@
 <% } %>
 </table><p>
 <p>
-<form method='get' action='/quizes'>
- Buscar Preguntas: <input type="text"  name="search"/>
- <input type="submit" value="Buscar"/>
-</from>
-
-<%if(session.user){%>
-<a id="BotonCrea" href="/quizes/new"><button type="button">Crear pregunta</button></a>
-<%}%>
-
-
