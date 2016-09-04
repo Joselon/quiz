@@ -1,5 +1,5 @@
 * {margin: 0; padding: 0;background-image:url(http://www.schminkestudio.com/wp-content/uploads/2016/08/5943-5-trend-leder.jpg);}              
-body { font: 24px Georgia, serif;color:black;}
+body { font: 24px Georgia, serif;}
 
 #page-wrap {margin: 2% auto; color: white;}
 #page-wrap > .main {border: 1px solid #999; padding: 1%; margin-bottom: 1px; color: #747A7F;}
@@ -8,7 +8,7 @@ section > div {padding: 20px;background: #f61;}
 header {background: #f61; text-align: center;}
 nav {background: #f61;}
 section {background: #f61; text-align: center;overflow:auto;word-wrap: break-word;}
-#tabpreg,#preg,#Tema,a  {background: #f61;}
+#tabpreg,#preg,#Tema,a  {background: #f61;color:black;}
 #botoneditar,#botonborrar,#BotonCrea {background: #f61;}
 input,form, button  {background: #f61;}
 footer {background: #f61; text-align: center;}
