@@ -23,7 +23,7 @@ models.Quiz.findAll({
 			stats.nQuizConComment++;
 		  }else {stats.nQuizSinComment++;}
 		}
-		stats.nCommentsXQuiz=stats.nComments/stats.nQuizes;
+		stats.nmedioCommentsXQuiz=stats.nComments/stats.nQuizes;
 		
 		res.render('statistics/show', {
 			stats: stats,
