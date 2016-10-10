@@ -8,8 +8,8 @@
 <a id="BotonCrea" href="/quizes/new"><button type="button">Crear pregunta</button></a>
 <%}%>
 <% var i; for (i=0;i<quizes.length; i++) { %>
-	<tr><td align="left" id="preg"><a  href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td>
-	    <td><span class="badge" id="Tema"><%= quizes[i].tema %></span></td>
+	<tr><td align="left" id="preg"><a  href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a>
+	    <span class="badge" id="Tema"><%= quizes[i].tema %></span></td>
 	    <%if (session.user) {%>
 	      <td id="botoneditar"><a href="quizes/<%= quizes[i].id %>/edit"><button>editar</button></a></td>
 	      <td id="botonborrar" >
