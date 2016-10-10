@@ -76,9 +76,9 @@
 			<ul class='main nav navbar-nav navbar-right' id='h1'>
 			<li>
 			<%if(!session.user){%>
-			  <span class="right glyphicon glyphicon-log-in"><a href="/login">Login</a></span>
+			  <a href="/login"><span class="right glyphicon glyphicon-log-in">Login</span></a>
 			<%}else{%>
-			  <span class="right glyphicon glyphicon-log-out"> <%=session.user.username%> <a href="/logout">Logout</a></span>
+			  <a href="/logout"><span class="right glyphicon glyphicon-log-out"><%=session.user.username%> Logout</span></a>
 			<%}%>
 			</li>
 			</ul>
