@@ -16,28 +16,75 @@
 	 type='text/css'
 	 media='only screen and (max-width: 480px)'
 	 href='/stylesheets/smartphone.css' />	  -->
+	  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;}
+    }
+  </style>
   </head>
   
   <body>
-	<div id='page-wrap'>
-		<header class='main' id='h1'>
+	
+	<nav class="navbar navbar-inverse">
+ 	 <div class="container-fluid">
+    		<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+			<a class="navbar-brand" href="#">Quiz: el juego de las preguntas</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class='main nav navbar-nav' id='n1' role='navegation'>
+				<li class="active"><a href='/'>Inicio</a></li>
+				<li><a href='/quizes'>Preguntas</a></li>
+				<li><a href='/author'>Autor</a></span></li>
+				<li><a href='/statistics'>Estadisticas</a></li>
+			</ul>
+			<ul class='main nav navbar-nav navbar-right' id='h1'>
+			<li>
 			<%if(!session.user){%>
-			  <span class="right"><a href="/login">Login</a></span>
+			  <span class="right glyphicon glyphicon-log-in"><a href="/login">Login</a></span>
 			<%}else{%>
-			  <span class="right"> <%=session.user.username%> <a href="/logout">Logout</a></span>
+			  <span class="right glyphicon glyphicon-log-out"> <%=session.user.username%> <a href="/logout">Logout</a></span>
 			<%}%>
-
-			<h2>Quiz: el juego de las preguntas</h2>
-		</header>
-    
-		<nav class='main' id='n1' role='navegation'>
-			<span><a href='/'>Inicio</a></span>
-			<span><a href='/quizes'>Preguntas</a></span>
-			<span><a href='/author'>Autor</a></span>
-			<span><a href='/statistics'>Estadisticas</a></span>
-		</nav>
+			</li>
+			</ul>
 			
-		<section class='main' id='s1'>
+			</div>		
+	 </div>
+	</nav>
+			
+		<section class='main container-fluid text-center' id='s1'>
 			<% if(errors.length){ %>
 			<span id='ErrorMsgs'>
 			 Corregir errores:<br/>
@@ -46,16 +93,16 @@
 			<% } %>
 			</span>
 			<% } %>
-			<div><%- body %></div>
+			<div class="well"><%- body %></div>
 		</section>
 		
-		<footer class='main' id='f1'>
+		<footer class='main container-fluid text-center' id='f1'>
 			<a href='http://es.wikipedia.org/wiki/Quiz'>¿Qué es un Quiz?</a>
 			</p>
                         <%if(session.user){%>
                         <a href='https://github.com/Joselon/quiz'>Página Github del proyecto</a>
                         <%}%>
 		</footer>
-	</div>		
+		
   </body>
 </html>
