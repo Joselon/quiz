@@ -38,13 +38,13 @@ exports.index=function(req, res){
   }else{
 	  //filtramos por preguntas con comentarios
 	  var searchAux = [];
-	  for ( var i = 0, l = req.query.search.length, searchAux = []; i < l; i++ ) {
+	  for ( var i = 0, l = req.query.search.length; i < l; i++ ) {
    		searchAux[ i ] = req.query.search[ i ];
 		}
 	  searchAux.shift();
 	  
 	  
-	   models.Quiz.findAll({where: ["id: { $in:[?]}", searchAux],
+	   models.Quiz.findAll({where: ["id: {in:?}", searchAux],
 			order:[["pregunta","ASC"]]}).then(function(quizes){
 		res.render('quizes/index',{quizes:quizes, errors:[]});
 		});
