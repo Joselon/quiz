@@ -8,7 +8,7 @@ exports.index=function(req,res){
 	  nmedioCommentsXQuiz:0,
 	  nQuizSinComment:0,
 	  nQuizConComment:0,
-	  listQuizComment:[~]
+	  listQuizComment:['~']
 };
 
 models.Quiz.findAll({
