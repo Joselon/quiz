@@ -1,5 +1,5 @@
-
-<a href="<%if(javascript:window.history.back().indexOf('search')!=-1){javascript:window.history.back();}else{/quizes}%>">&laquo; Volver atrás</a>
+<%var urlvuelta;if(javascript:window.history.back().indexOf('search')!=-1){urlvuelta='javascript:window.history.back();'}else{urlvuelta='/quizes';};%>
+<a href="<%=urlvuelta%>">&laquo; Volver atrás</a>
 <form method="get" action="/quizes/<%= quiz.id %>/answer">
 
  Pregunta: <%=quiz.pregunta%> <p>
