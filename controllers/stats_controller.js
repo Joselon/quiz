@@ -8,8 +8,9 @@ exports.index=function(req,res){
 	  nmedioCommentsXQuiz:0,
 	  nQuizSinComment:0,
 	  nQuizConComment:0,
-	  listQuizComment:['~']
+	  
 };
+	var listQuizComment=['~'];
 
 models.Quiz.findAll({
 	include: [{model: models.Comment}]
@@ -22,7 +23,7 @@ models.Quiz.findAll({
 			console.log(quizes[i].Comments.length +' comentarios en '+quizes[i].pregunta);
 			stats.nComments += (quizes[i].Comments.length);
 			stats.nQuizConComment++;
-			 stats.listQuizComment.push(i);
+			listQuizComment.push(i);
 		  }else {stats.nQuizSinComment++;}
 		}
 		stats.nmedioCommentsXQuiz=stats.nComments/stats.nQuizes;
