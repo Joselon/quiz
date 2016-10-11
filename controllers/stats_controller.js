@@ -7,7 +7,8 @@ exports.index=function(req,res){
 	  nComments:0,
 	  nmedioCommentsXQuiz:0,
 	  nQuizSinComment:0,
-	  nQuizConComment:0
+	  nQuizConComment:0,
+	  listQuizComment:[~]
 };
 
 models.Quiz.findAll({
@@ -21,6 +22,7 @@ models.Quiz.findAll({
 			console.log(quizes[i].Comments.length +' comentarios en '+quizes[i].pregunta);
 			stats.nComments += (quizes[i].Comments.length);
 			stats.nQuizConComment++;
+			  listQuizComment.push(i);
 		  }else {stats.nQuizSinComment++;}
 		}
 		stats.nmedioCommentsXQuiz=stats.nComments/stats.nQuizes;
