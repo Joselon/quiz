@@ -41,7 +41,7 @@ exports.index=function(req, res){
 	  searchAux=req.query.search.split(",");
 	  searchAux.shift();
 	  for(var i=0, l=searchAux.length;i<l;i++){
-		  searchAux[i]=Number(searchAux[i])+1;
+		  searchAux[i]=Number(searchAux[i]);
 	  }
 	  
 	   models.Quiz.findAll({where: ["id IN(?)", searchAux],
