@@ -39,7 +39,8 @@ exports.index=function(req, res){
 	  //filtramos por preguntas con comentarios
 	  var searchAux= req.query.search.shift();
 	  
-	   models.Quiz.findAll({where: ["id: { in:[?]}", searchAux],
+	  
+	   models.Quiz.findAll({where: ["id: { $in:[?]}", searchAux],
 			order:[["pregunta","ASC"]]}).then(function(quizes){
 		res.render('quizes/index',{quizes:quizes, errors:[]});
 		});
