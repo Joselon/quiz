@@ -34,7 +34,7 @@ exports.index=function(req, res){
   //filtramos
    models.Quiz.findAll({where:["pregunta LIKE ?",searchAux],
 			order:[["pregunta","ASC"]]}).then(function(quizes){
-		res.render('quizes/index',{quizes:quizes, errors:[]});
+		res.render('quizes/index',{quizes:quizes, errors:[],urlBusqueda:urlBusqueda});
 		});
   }else{
 	  //filtramos por preguntas con comentarios
@@ -47,12 +47,12 @@ exports.index=function(req, res){
 	  
 	   models.Quiz.findAll({where: ["id IN(?)", searchAux],
 			order:[["pregunta","ASC"]]}).then(function(quizes){
-		res.render('quizes/index',{quizes:quizes, errors:[]});
+		res.render('quizes/index',{quizes:quizes, errors:[],urlBusqueda:urlBusqueda});
 		});
   }  
  }else{//mostramos todo
    models.Quiz.findAll().then(function(quizes) {
-     res.render('quizes/index', {quizes:quizes,errors:[]});
+     res.render('quizes/index', {quizes:quizes,errors:[],urlBusqueda:urlBusqueda});
     }).catch(function(error){next(error);});
   }
 };
