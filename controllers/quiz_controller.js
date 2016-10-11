@@ -37,7 +37,11 @@ exports.index=function(req, res){
 		});
   }else{
 	  //filtramos por preguntas con comentarios
-	  var searchAux= req.query.search.shift();
+	  var searchAux = [];
+	  for ( var i = 0, l = req.query.search.length, searchAux = []; i < l; i++ ) {
+   		searchAux[ i ] = req.query.search[ i ];
+		}
+	  searchAux.shift();
 	  
 	  
 	   models.Quiz.findAll({where: ["id: { $in:[?]}", searchAux],
