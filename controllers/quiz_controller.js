@@ -19,7 +19,7 @@ exports.load=function(req, res, next, quizId){
 exports.index=function(req, res){
 var urlBusqueda= '/quizes';
  if (req.query.search !== undefined){
-  urlBusqueda= window.location.href;
+  urlBusqueda= javascript:window.location.href;
    //si estamos buscando filtramos las preguntas
    //sustituimos en blanco por %
   if(req.query.search.charAt(0)!='~'){
