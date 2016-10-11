@@ -22,7 +22,7 @@ models.Quiz.findAll({
 			console.log(quizes[i].Comments.length +' comentarios en '+quizes[i].pregunta);
 			stats.nComments += (quizes[i].Comments.length);
 			stats.nQuizConComment++;
-			  listQuizComment.push(i);
+			 stats.listQuizComment.push(i);
 		  }else {stats.nQuizSinComment++;}
 		}
 		stats.nmedioCommentsXQuiz=stats.nComments/stats.nQuizes;
