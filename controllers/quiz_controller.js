@@ -38,13 +38,17 @@ exports.index=function(req, res){
   }else{
 	  //filtramos por preguntas con comentarios
 	  var searchAux = [];
-	  for ( var i = 0, l = req.query.search.length; i < l; i++ ) {
-   		searchAux[ i ] = req.query.search[ i ];
+	  var n=0;
+	  for ( var i = 0, l = req.query.search.length,n=0; i < l; i++ ) {
+		 if( req.query.search[ i ]!=','){
+   		  searchAux[ n ] = req.query.search[ i ]+1;
+	 	  n++;
+		 }
 		}
 	  searchAux.shift();
 	  
 	  
-	   models.Quiz.findAll({where: ["id: {in:?}", searchAux],
+	   models.Quiz.findAll({where: ["id in:(?)", searchAux],
 			order:[["pregunta","ASC"]]}).then(function(quizes){
 		res.render('quizes/index',{quizes:quizes, errors:[]});
 		});
