@@ -1,5 +1,5 @@
 var models=require('../models/models.js');
-
+var urlBusqueda= '/quizes';
 // Autoload -factoriza el codigo si ruta incluye :quizId
 exports.load=function(req, res, next, quizId){
 	//models.Quiz.findById(quizId).then(
@@ -17,7 +17,7 @@ exports.load=function(req, res, next, quizId){
 };
 //GET /quizes
 exports.index=function(req, res){
-var urlBusqueda= '/quizes';
+
  if (req.query.search !== undefined){
   urlBusqueda='/quizes?search='+req.query.search ;
    //si estamos buscando filtramos las preguntas
