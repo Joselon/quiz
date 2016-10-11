@@ -48,7 +48,7 @@ exports.index=function(req, res){
 	  searchAux.shift();
 	  
 	  
-	   models.Quiz.findAll({where: ["id in:(?)", searchAux],
+	   models.Quiz.findAll({where: ["id IN(?)", searchAux],
 			order:[["pregunta","ASC"]]}).then(function(quizes){
 		res.render('quizes/index',{quizes:quizes, errors:[]});
 		});
