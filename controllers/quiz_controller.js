@@ -41,7 +41,7 @@ exports.index=function(req, res){
 	  var n=0;
 	  for ( var i = 0, l = req.query.search.length,n=0; i < l; i++ ) {
 		 if( req.query.search[ i ]!=','){
-   		  searchAux[ n ] = req.query.search[ i ]+1;
+   		  searchAux[ n ] = Number(req.query.search[ i ])+1;
 	 	  n++;
 		 }
 		}
