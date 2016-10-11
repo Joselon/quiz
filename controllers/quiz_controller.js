@@ -21,6 +21,7 @@ exports.index=function(req, res){
  if (req.query.search !== undefined){
    //si estamos buscando filtramos las preguntas
    //sustituimos en blanco por %
+  if(req.query.search.charAt(0)!='~'){
    var searchAux= req.query.search.replace(/\s+/g, "%");
    //Añadimos % al principio y el final
    if (searchAux.charAt(0)!='%'){
@@ -34,6 +35,13 @@ exports.index=function(req, res){
 			order:[["pregunta","ASC"]]}).then(function(quizes){
 		res.render('quizes/index',{quizes:quizes, errors:[]});
 		});
+  }else{
+	  //filtramos por preguntas con comentarios
+	   models.Quiz.findAll({where:["quizId IN (?)",searchAux],
+			order:[["pregunta","ASC"]]}).then(function(quizes){
+		res.render('quizes/index',{quizes:quizes, errors:[]});
+		});
+  }  
  }else{//mostramos todo
    models.Quiz.findAll().then(function(quizes) {
      res.render('quizes/index', {quizes:quizes,errors:[]});
