@@ -40,8 +40,9 @@ exports.index=function(req, res){
 	  var searchAux = [];
 	  searchAux=req.query.search.split(",");
 	  searchAux.shift();
-	 
-	  
+	  for(var i=0, l=searchAux.length;i<l;i++){
+		  searchAux[i]=Number(searchAux[i])+1);
+	  }
 	  
 	   models.Quiz.findAll({where: ["id IN(?)", searchAux],
 			order:[["pregunta","ASC"]]}).then(function(quizes){
