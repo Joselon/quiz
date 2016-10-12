@@ -1,8 +1,8 @@
 
-<a href="javascript:window.history.back();">&laquo; Volver atrás</a>
+<a href="/quizes">&laquo; Volver atrás</a>
 <form method="get" action="/quizes/<%= quiz.id %>/answer">
 
- Pregunta: <%=quiz.pregunta%> <p>
+ Pregunta: <%=quiz.pregunta%> <span class="badge" id="Tema"><%= quiz.tema %></span><p>
  <input type="text" name="respuesta" value='Respuesta' onclick="if (this.value=='Respuesta') this.value='';"/>
  <input type="submit" value="Enviar">
 </form>
@@ -20,4 +20,3 @@
 		</p>
 	<%}%>
 <%}%>
-
