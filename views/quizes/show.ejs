@@ -7,8 +7,8 @@
  <input type="submit" value="Enviar">
 </form>
 <%if (session.user) {%>
-	     <a href="quizes/<%= quiz.id %>/edit"><button id="botoneditar">editar</button></a></td>
-	     <form method="post" action="quizes/<%= quiz.id %>?_method=delete">
+	     <a href="quizes/<%= quiz.id %>/edit"><button id="botoneditar">editar</button></a>
+	     <form method="post" action="<%= quiz.id %>?_method=delete">
 		<button type="submit" id="botonborrar" onClick="return confirm('Borrar: <%=quiz.pregunta %>');">
 		borrar
 		</button>
