@@ -1,13 +1,15 @@
-<div class="table-responsive">
-<table class="table table-hover" id="tabpreg">
+
 <form method='get' action='/quizes'>
  Buscar Preguntas: <input type="text"  name="search"/>
  <input type="submit" value="Buscar"/>
-</from>
+</form>
 <%if(session.user){%>
 <a id="BotonCrea" href="/quizes/new"><button type="button">Crear pregunta</button></a>
 <%}%>
-<% var i; for (i=0;i<quizes.length; i++) { %>
+<div class="table-responsive">
+<table class="table table-hover" id="tabpreg">
+
+<% var i; for (i=0;i<quizes.length;i++) { %>
 	<tr><td align="left" id="preg"><a  href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a>
 	    <span class="badge" id="Tema"><%= quizes[i].tema %></span></td>
 	    <%if (session.user) {%>
