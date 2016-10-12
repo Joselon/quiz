@@ -47,3 +47,20 @@ exports.publish=function(req,res) {
 		.then( function(){res.redirect('/quizes/'+req.params.quizId);})
 		.catch(function(error){next(error)});
 };
+
+// PUT /quizes/:quizId/comments/:commentId/hide
+exports.publish=function(req,res) {
+	req.comment.publicado=false;
+	
+	req.comment.save({fields: ["publicado"]})
+		.then( function(){res.redirect('/quizes/'+req.params.quizId);})
+		.catch(function(error){next(error)});
+};
+
+//DELETE 
+
+exports.destroy=function(req,res){
+	req.comment.destroy().then(function(){
+	 res.redirect('/quizes/'+req.params.quizId);})
+	.catch(function(error){next(error)});
+};

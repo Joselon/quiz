@@ -17,6 +17,14 @@
 			<a href="/quizes/<%= quiz.id %>/comments/<%=quiz.Comments[index].id%>/publish">
 				<button>Publicar</button></a>
 		<%}%>
+                <%if(session.user&&!quiz.Comments[index].publicado){%>
+			<a href="/quizes/<%= quiz.id %>/comments/<%=quiz.Comments[index].id%>/hide">
+				<button>Ocultar</button></a>
+		<%}%>
+                <%if(session.user&&!quiz.Comments[index].publicado){%>
+			<a href="/quizes/<%= quiz.id %>/comments/<%=quiz.Comments[index].id%>/destroy">
+				<button>Borrar</button></a>
+		<%}%>
 		</p>
 	<%}%>
 <%}%>
