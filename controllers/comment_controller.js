@@ -59,8 +59,8 @@ exports.publish=function(req,res) {
 
 //DELETE 
 
-exports.destroy=function(req,res){
+/*exports.destroy=function(req,res){
 	req.comment.destroy().then(function(){
 	 res.redirect('/quizes/'+req.params.quizId);})
 	.catch(function(error){next(error)});
-};
+};*/
