@@ -1,4 +1,5 @@
  <label for="tema" id="tema" class="rem">Filtro:</label>
+ <form method='get' action='/quizes'>
 <select name="quiz[tema]">
  <option value="otro" >Otro</option>
  <option value="humanidades" "selected" >Geografía e Historia</option>
@@ -7,8 +8,8 @@
  <option value="tecnologia"  >Tecnología</option>
 </select>
 <a href="javascript:history.back(1);"><button type="button">Cancelar</button></a>
-<a href= "/quizes?search=^"><button type="button">Ir</button></a>
-
+<a type="submit" name="search"><button type="button">Ir</button></a>
+</form>
 <form method='get' action='/quizes'>
  Buscar Preguntas: <input type="text"  name="search"/>
  <input type="submit" value="Buscar"/>
