@@ -36,7 +36,7 @@ exports.index=function(req, res){
 		res.render('quizes/index',{quizes:quizes, errors:[],urlBusqueda:urlBusqueda});
 		});
   } 
-  else if(req.query.search.charAt(0)=='^'){
+  if(req.query.search.charAt(0)=='^'){
    //filtramos por tema
 	  var searchAux=req.query.search.shift();
 
@@ -47,19 +47,20 @@ exports.index=function(req, res){
   }
   else{
 	  var searchAux= req.query.search.replace(/\s+/g, "%");
-   //Añadimos % al principio y el final
-   if (searchAux.charAt(0)!='%'){
+   	//Añadimos % al principio y el final
+   	if (searchAux.charAt(0)!='%'){
 	searchAux="%"+searchAux;
-   }
-   if(searchAux.charAt(searchAux.length-1)!='%'){
+   	}
+   	if(searchAux.charAt(searchAux.length-1)!='%'){
 	searchAux=searchAux+"%";
-   }
-  //filtramos
-   models.Quiz.findAll({where:["pregunta LIKE ?",searchAux],
+   	}
+  	//filtramos
+   	models.Quiz.findAll({where:["pregunta LIKE ?",searchAux],
 			order:[["pregunta","ASC"]]}).then(function(quizes){
 		res.render('quizes/index',{quizes:quizes, errors:[],urlBusqueda:urlBusqueda});
 		});
 	  
+ }
  }else{//mostramos todo
    models.Quiz.findAll().then(function(quizes) {
      res.render('quizes/index', {quizes:quizes,errors:[],urlBusqueda:urlBusqueda});
