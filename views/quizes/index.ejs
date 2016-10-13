@@ -1,6 +1,6 @@
  <label for="tema" id="tema" class="rem">Filtro:</label>
- <form method='get' action='/quizes'>
-<select name="quiz[tema]">
+ <form name="form1" method='get' action='/quizes'>
+<select name="tema">
  <option value="otro" >Otro</option>
  <option value="humanidades" "selected" >Geografía e Historia</option>
  <option value="ocio" >Deporte y Ocio</option>
@@ -8,7 +8,7 @@
  <option value="tecnologia"  >Tecnología</option>
 </select>
 <a href="javascript:history.back(1);"><button type="button">Cancelar</button></a>
-<a href="javascript:window.open('http://joselonode.herokuapp.com/quizes?search:^'+document.quiz[tema].options[document.quiz[tema].selectedIndex].value);"><button type="button">Ir</button></a>
+<a href="javascript:window.open('http://joselonode.herokuapp.com/quizes?search:^'+document.form1.tema.options[document.form1.tema.selectedIndex].value);"><button type="button">Ir</button></a>
 </form>
 <form method='get' action='/quizes'>
  Buscar Preguntas: <input type="text"  name="search"/>
