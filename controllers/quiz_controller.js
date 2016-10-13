@@ -22,8 +22,31 @@ exports.index=function(req, res){
   urlBusqueda='/quizes?search='+req.query.search ;
    //si estamos buscando filtramos las preguntas
    //sustituimos en blanco por %
-  if(req.query.search.charAt(0)!='~'){
-   var searchAux= req.query.search.replace(/\s+/g, "%");
+  if(req.query.search.charAt(0)=='~'){
+   //filtramos por preguntas con comentarios
+	  var searchAux = [];
+	  searchAux=req.query.search.split(",");
+	  searchAux.shift();
+	  for(var i=0, l=searchAux.length;i<l;i++){
+		  searchAux[i]=Number(searchAux[i]);
+	  }
+	  
+	   models.Quiz.findAll({where: ["id IN(?)", searchAux],
+			order:[["pregunta","ASC"]]}).then(function(quizes){
+		res.render('quizes/index',{quizes:quizes, errors:[],urlBusqueda:urlBusqueda});
+		});
+  } 
+  elseif(req.query.search.charAt(0)=='^'){
+   //filtramos por tema
+	  var searchAux=req.query.search.shift();
+
+	   models.Quiz.findAll({where: ["tema LIKE ?", searchAux],
+			order:[["pregunta","ASC"]]}).then(function(quizes){
+		res.render('quizes/index',{quizes:quizes, errors:[],urlBusqueda:urlBusqueda});
+		});
+  }
+  else{
+	  var searchAux= req.query.search.replace(/\s+/g, "%");
    //Añadimos % al principio y el final
    if (searchAux.charAt(0)!='%'){
 	searchAux="%"+searchAux;
@@ -36,20 +59,7 @@ exports.index=function(req, res){
 			order:[["pregunta","ASC"]]}).then(function(quizes){
 		res.render('quizes/index',{quizes:quizes, errors:[],urlBusqueda:urlBusqueda});
 		});
-  }else{
-	  //filtramos por preguntas con comentarios
-	  var searchAux = [];
-	  searchAux=req.query.search.split(",");
-	  searchAux.shift();
-	  for(var i=0, l=searchAux.length;i<l;i++){
-		  searchAux[i]=Number(searchAux[i]);
-	  }
 	  
-	   models.Quiz.findAll({where: ["id IN(?)", searchAux],
-			order:[["pregunta","ASC"]]}).then(function(quizes){
-		res.render('quizes/index',{quizes:quizes, errors:[],urlBusqueda:urlBusqueda});
-		});
-  }  
  }else{//mostramos todo
    models.Quiz.findAll().then(function(quizes) {
      res.render('quizes/index', {quizes:quizes,errors:[],urlBusqueda:urlBusqueda});
