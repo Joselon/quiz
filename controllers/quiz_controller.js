@@ -39,12 +39,18 @@ exports.index=function(req, res){
   if(req.query.search.charAt(0)=='^'){
    //filtramos por tema
 	  var searchAux =req.query.search.replace("^", "");
-	  
+	  if(searchAux=='null'){
+	console.log('Buscando: '+searchAux);
+	   models.Quiz.findAll({where: ["tema is null"],
+			order:[["pregunta","ASC"]]}).then(function(quizes){
+		res.render('quizes/index',{quizes:quizes, errors:[],urlBusqueda:urlBusqueda});
+		});	  
+	  }else{
 	console.log('Buscando: '+searchAux);
 	   models.Quiz.findAll({where: {tema: searchAux},
 			order:[["pregunta","ASC"]]}).then(function(quizes){
 		res.render('quizes/index',{quizes:quizes, errors:[],urlBusqueda:urlBusqueda});
-		});
+		});}
   }
   else{
 	  var searchAux= req.query.search.replace(/\s+/g, "%");
