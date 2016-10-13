@@ -9,7 +9,7 @@
  <option value="tecnologia"  >Tecnología</option>
 </select>
 <a href="javascript:history.back(1);"><button type="button">Cancelar</button></a>
-<a href="javascript:window.open('http://joselonode.herokuapp.com/quizes?search=^'+document.form1.tema.options[document.form1.tema.selectedIndex].value,'_self');"><button type="button">Ir</button></a>
+<a href="javascript:window.open('/quizes?search=^'+document.form1.tema.options[document.form1.tema.selectedIndex].value,'_self');"><button type="button">Ir</button></a>
 </form>
 <form method='get' action='/quizes'>
  Buscar Preguntas: <input type="text"  name="search"/>
