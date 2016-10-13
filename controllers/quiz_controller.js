@@ -38,8 +38,10 @@ exports.index=function(req, res){
   } 
   if(req.query.search.charAt(0)=='^'){
    //filtramos por tema
-	  var searchAux =req.query.search;
-	  searchAux.shift();
+	  var searchAux =req.query.search.replace("^", "%");
+	  if(searchAux.charAt(searchAux.length-1)!='%'){
+	searchAux=searchAux+"%";
+   	}
 	console.log('Buscando: '+searchAux);
 	   models.Quiz.findAll({where: ["tema LIKE ?", searchAux],
 			order:[["pregunta","ASC"]]}).then(function(quizes){
