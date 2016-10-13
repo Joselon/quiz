@@ -1,6 +1,6 @@
  <label class="rem">Filtro:</label>
 <form name="form1">
-<select name="tema">
+<select name="tema" onchange="javascript:window.open('/quizes?search=^'+document.form1.tema.options[document.form1.tema.selectedIndex].value,'_self');">
  <option value="null" >Sin respuesta</option>	
  <option value="otro" >Otro</option>
  <option value="humanidades">Geografía e Historia</option>
@@ -8,8 +8,7 @@
  <option value="ciencia"  >Ciencia y Naturaleza</option>
  <option value="tecnologia"  >Tecnología</option>
 </select>
-<a href="javascript:history.back(1);"><button type="button">Cancelar</button></a>
-<a href="javascript:window.open('/quizes?search=^'+document.form1.tema.options[document.form1.tema.selectedIndex].value,'_self');"><button type="button">Ir</button></a>
+<a href="javascript:history.back(1);"><button type="button">Volver</button></a>
 </form>
 <form method='get' action='/quizes'>
  Buscar Preguntas: <input type="text"  name="search"/>
