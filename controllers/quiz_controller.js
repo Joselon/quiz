@@ -36,7 +36,7 @@ exports.index=function(req, res){
 		res.render('quizes/index',{quizes:quizes, errors:[],urlBusqueda:urlBusqueda});
 		});
   } 
-  elseif(req.query.search.charAt(0)=='^'){
+  else if(req.query.search.charAt(0)=='^'){
    //filtramos por tema
 	  var searchAux=req.query.search.shift();
 
