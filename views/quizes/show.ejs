@@ -6,6 +6,7 @@
  <input type="text" name="respuesta" value='Respuesta' onclick="if (this.value=='Respuesta') this.value='';"/>
  <input type="submit" value="Enviar">
 </form>
+ <a href="<%= quiz.id %>/ahorcado"><button id="botoneditar">Juega</button></a>
 <%if (session.user) {%>
 	     <a href="<%= quiz.id %>/edit"><button id="botoneditar">editar</button></a>
 	     <form method="post" action="<%= quiz.id %>?_method=delete">
