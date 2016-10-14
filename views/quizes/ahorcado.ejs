@@ -42,6 +42,8 @@ function esta(caracter, miarray){
   for(var j=0;j<miarray.length;j++){
     if (caracter==miarray[j]){
 		return true;
+    }else if(caracter==' '){
+    		return true;
     }else{
 		//console.log("el caracter ", caracter, " no es el valor del array ",miarray[j] )
 	}
