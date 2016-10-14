@@ -59,7 +59,7 @@ function estanTodas(arrayAciertos, mipalabra){
 ////////////////////////////////////////////////////////////////////////////////
 // PALABRAS
 ////////////////////////////////////////////////////////////////////////////////
-var palabraEscogida = "Por fin";//quiz.respuesta;
+var palabraEscogida = quiz.respuesta.toLowerCase();;
 var aciertos = [];
 
 console.log(palabraEscogida);
@@ -280,3 +280,4 @@ function dibujaAhorcado(numerrores){
 </div>
 <div id="botonesletras"></div>
 </div>
+<a href='/quizes/<%=quiz.id%>'>Volver</a>
