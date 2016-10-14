@@ -113,14 +113,14 @@ $(document).ready(function(){
 				escribePalabra(palabraEscogida, aciertos);
 				//miro si ha ganado
 				if(estanTodas(aciertos,palabraEscogida)){
-					var caja = $('<div class="dialogletra" title="Has Ganado!!">Felicidades! has adivinado la palabra!!</div>');
+					var caja = $('<div class="dialogletra" title="¡Acertada!">Felicidades! has adivinado la respuesta!!</div>');
 					caja.dialog({
 					modal: true,
-					
 					buttons: {
-						"Ok": function(){
+						"Cerrar": function(){
 							$(this).dialog("close");
-						}
+						},
+						"Volver": function(){javascript:history.back(1);}
 					}
 					});	
 				}
@@ -130,13 +130,12 @@ $(document).ready(function(){
 				dibujaAhorcado(numFallos);
 				//miro si se ha perdido
 				if(numFallos==6){
-					var caja = $('<div class="dialogletra" title="Has Perdido!!"> ¡Vuelve a intentarlo!</div>');
+					var caja = $('<div class="dialogletra" title="¡Has Perdido!"> ¡Vuelve a intentarlo!</div>');
 					caja.dialog({
 					modal: true,
-					
 					buttons: {
-						"Ok": function(){
-							$(this).dialog("close");
+						"Volver": function(){
+							javascript:history.back(1);
 						}
 					}
 					});	
