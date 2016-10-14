@@ -59,7 +59,8 @@ function estanTodas(arrayAciertos, mipalabra){
 ////////////////////////////////////////////////////////////////////////////////
 // PALABRAS
 ////////////////////////////////////////////////////////////////////////////////
-var palabraEscogida = <%=quiz.respuesta%>.toLowerCase();
+var palabraEscogida = "<%=quiz.respuesta%>"
+palabraEscogida=palabraEscogida.toLowerCase();
 var aciertos = [];
 
 console.log(palabraEscogida);
