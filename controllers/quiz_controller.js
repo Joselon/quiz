@@ -32,7 +32,7 @@ exports.index=function(req, res){
 	  }
 	  
 	   models.Quiz.findAll({where: ["id IN(?)", searchAux],
-			order:[["pregunta","ASC"]]}).then(function(quizes){
+			order:[["updatedAt","DESC"]]}).then(function(quizes){
 		res.render('quizes/index',{quizes:quizes, errors:[],urlBusqueda:urlBusqueda});
 		});
   } 
