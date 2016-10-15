@@ -20,8 +20,15 @@
 <p><strong>Comentarios:</strong></p>
 <%for(index in quiz.Comments){%>
 	<%if(quiz.Comments[index].publicado ||session.user){%>
-		<p>-<%if(quiz.Comments[index].texto.substr(0,4)=='http'){%><a href="<%=quiz.Comments[index].texto%>" target="_blank"/><%}%> <%=quiz.Comments[index].texto%>
-
+        <p>-<%if(quiz.Comments[index].texto.substr(0,4)=='http'){ var $enlace=quiz.Comments[index].texto%><a href="<%=$enlace%>" target="_blank"><%=quiz.Comments[index].texto%></a>
+              
+            <%}else{%>
+                    <%=quiz.Comments[index].texto%>
+                    <%}%>
+		<%if(session.user&&!quiz.Comments[index].publicado){%>
+			<a href="/quizes/<%= quiz.id %>/comments/<%=quiz.Comments[index].id%>/publish">
+				<button>Publicar</button></a>
+		<%}%>
                 <%if(session.user&&quiz.Comments[index].publicado){%>
 			<a href="/quizes/<%= quiz.id %>/comments/<%=quiz.Comments[index].id%>/hide">
 				<button>Ocultar</button></a>
