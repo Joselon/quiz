@@ -33,7 +33,7 @@ exports.index=function(req, res){
 	  */
 	   models.Quiz.findAll({ include: [{model:models.Comment,
                     where:['"Comments"."createdAt" is not null']}],
-                    order:[['"Quiz".Comments"."createdAt"','DESC']]  
+                    order:[['"Quiz.Comments"."createdAt"','DESC']]  
         }).then(function(quizes){
 		res.render('quizes/index',{quizes:quizes, errors:[],urlBusqueda:urlBusqueda});
 		});
