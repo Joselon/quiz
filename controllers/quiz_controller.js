@@ -58,8 +58,9 @@ exports.index=function(req, res){
 		});}
   }
   else{
-	  var searchAux= req.query.search.replace(/\s+/g, "%");
+	  var searchAux= req.query.search.
           searchAux=searchAux.toUpperCase();
+	  searchAux=searchAux.replace(/\s+/g, "%");
    	//Añadimos % al principio y el final
    	if (searchAux.charAt(0)!='%'){
 	searchAux="%"+searchAux;
@@ -68,7 +69,7 @@ exports.index=function(req, res){
 	searchAux=searchAux+"%";
    	}
   	//filtramos
-   	models.Quiz.findAll({where:["UPPER pregunta LIKE ?",searchAux],
+   	models.Quiz.findAll({where:["pregunta LIKE ?",searchAux],
 			order:[["pregunta","ASC"]]}).then(function(quizes){
 		res.render('quizes/index',{quizes:quizes, errors:[],urlBusqueda:urlBusqueda});
 		});
