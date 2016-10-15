@@ -32,7 +32,8 @@ exports.index=function(req, res){
 	  }
 	  
 	   models.Quiz.findAll({where: ["id IN(?)", searchAux],
-			order:[["updatedAt","DESC"]]}).then(function(quizes){
+                        include: [{model:models.Comment}]
+			order:[["Comments.updatedAt","DESC"]]}).then(function(quizes){
 		res.render('quizes/index',{quizes:quizes, errors:[],urlBusqueda:urlBusqueda});
 		});
   } 
