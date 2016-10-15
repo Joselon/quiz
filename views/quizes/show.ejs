@@ -1,4 +1,4 @@
-<%var $historial='';var $esta=-1; for(var i=1;i<6;i++){$historial=javascript:history.back(i); if($historial.indexOf('search')!=-1){$esta=i}} if($esta!=-1){%><a href="javascript:history.back(<%=$esta%>);"><button type="button">Volver a consulta</button></a>
+<%var $historial='' var $esta=-1 for(var i=1;i<6;i++){$historial=javascript:history.back(i) if($historial.indexOf('search')!=-1){$esta=i}} if($esta!=-1){%><a href="javascript:history.back(<%=$esta%>);"><button type="button">Volver a consulta</button></a>
 <%}else{%>
 <a href="/quizes"><button type="button">&laquo; Volver a Preguntas</button></a>
 <%}%>
