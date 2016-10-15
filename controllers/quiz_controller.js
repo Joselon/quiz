@@ -35,7 +35,7 @@ exports.index=function(req, res){
                     where:['"Comments"."createdAt" is not null'],
                     order:[['"Comments"."createdAt"','DESC']],
                     group:"Comments.QuizId"}],
-                                order:(['"Comments.createdAt"'],"DESC")
+                                order:("Comments.createdAt","DESC")
         }).then(function(quizes){
 		res.render('quizes/index',{quizes:quizes, errors:[],urlBusqueda:urlBusqueda});
 		});
