@@ -69,7 +69,7 @@ exports.index=function(req, res){
 	searchAux=searchAux+"%";
    	}
   	//filtramos
-   	models.Quiz.findAll({where:["pregunta LIKE ?",searchAux],
+   	models.Quiz.findAll({where:pregunta{$ilike:searchAux},
 			order:[["pregunta","ASC"]]}).then(function(quizes){
 		res.render('quizes/index',{quizes:quizes, errors:[],urlBusqueda:urlBusqueda});
 		});
