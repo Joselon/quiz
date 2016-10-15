@@ -4,11 +4,12 @@
 <input type="text" id="resp" name="quiz[respuesta]" value="<%= quiz.respuesta %>" onclick="if (this.value=='Respuesta') this.value='';"/><p>
 <label for="tema" class="rem">Tema:</label>
 <select name="quiz[tema]">
- <option value="otro" <%= (quiz.tema === "otro") ? "selected" : "" %> >Otro</option>
- <option value="humanidades" <%= (quiz.tema === "humanidades") ? "selected" : "" %> >Humanidades</option>
- <option value="ocio" <%= (quiz.tema === "ocio") ? "selected" : "" %> >Ocio</option>
- <option value="ciencia" <%= (quiz.tema === "ciencia") ? "selected" : "" %> >Ciencia</option>
- <option value="tecnologia" <%= (quiz.tema === "tecnologia") ? "selected" : "" %> >Tecnología</option>
+ <option value="blue" <%= (quiz.tema === "blue") ? "selected" : "" %> >Geografía</option>
+ <option value="brown" <%= (quiz.tema === "brown") ? "selected" : "" %> >Arte y Literatura</option>
+ <option value="yellow" <%= (quiz.tema === "yellow") ? "selected" : "" %> >Historia</option>
+ <option value="pink" <%= (quiz.tema === "pink") ? "selected" : "" %> >Entretenimiento</option>
+ <option value="green" <%= (quiz.tema === "green") ? "selected" : "" %> >Ciencias y Naturaleza</option>
+ <option value="orange" <%= (quiz.tema === "orange") ? "selected" : "" %> >Deportes</option>
 </select>
 <a href="javascript:history.back(1);"><button type="button">Cancelar</button></a>
 <input type="submit" value="Salvar">
