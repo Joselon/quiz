@@ -58,7 +58,7 @@ exports.index=function(req, res){
   }
   else{
 	  var searchAux= req.query.search.replace(/\s+/g, "%");
-          searchAux=searchAux.toUpperCase;
+          searchAux=searchAux.toUpperCase();
    	//Añadimos % al principio y el final
    	if (searchAux.charAt(0)!='%'){
 	searchAux="%"+searchAux;
