@@ -24,7 +24,8 @@ models.Quiz.findAll({
 			stats.nComments += (quizes[i].Comments.length);
 			stats.nQuizConComment++;
 			//listQuizComment.push(quizes[i].id);
-		  }else {stats.nQuizSinComment++;}
+		  }
+		 if (quizes[i].tema==null){stats.nQuizSinComment++;}
 		}
 		stats.nmedioCommentsXQuiz=stats.nComments/stats.nQuizes;
 		stats.nmedioCommentsXQuiz=stats.nmedioCommentsXQuiz.toFixed(2);
