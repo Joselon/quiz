@@ -58,7 +58,7 @@ exports.index=function(req, res){
 		});}
   }
   else{
-	  var searchAux= req.query.search.
+	  var searchAux= req.query.search;
           searchAux=searchAux.toUpperCase();
 	  searchAux=searchAux.replace(/\s+/g, "%");
    	//Añadimos % al principio y el final
