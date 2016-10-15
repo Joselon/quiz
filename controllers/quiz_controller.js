@@ -37,7 +37,7 @@ exports.index=function(req, res){
                     group:"Comments.QuizId"}],
                                 order:'"Comments"."createdAt" DESC'
         }).then(function(quizes){
-		res.render('quizes/index',{quizes:quizes, errors:[]});
+		res.render('quizes/index',{quizes:quizes, errors:[],urlBusqueda:urlBusqueda});
 		});
   } 
   if(req.query.search.charAt(0)=='^'){
