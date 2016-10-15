@@ -5,7 +5,8 @@ exports.load=function(req, res, next, quizId){
 	//models.Quiz.findById(quizId).then(
 	models.Quiz.find({
 		where: {id: Number(quizId)},
-		include: [{model:models.Comment}]
+		include: [{model:models.Comment}],
+		order:'"Comments"."createdAt" DESC'
 	}).then(
 	 function(quiz){
 	  if(quiz){
