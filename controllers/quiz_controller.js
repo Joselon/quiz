@@ -24,14 +24,14 @@ exports.index=function(req, res){
    //sustituimos en blanco por %
   if(req.query.search.charAt(0)=='~'){
    //filtramos por preguntas con comentarios
-	  var searchAux = [];
+	 /* var searchAux =  [];
 	  searchAux=req.query.search.split(",");
 	  searchAux.shift();
 	  for(var i=0, l=searchAux.length;i<l;i++){
 		  searchAux[i]=Number(searchAux[i]);
 	  }
-	  
-	   models.Quiz.findAll({where: ["id IN(?)", searchAux],
+	  */
+	   models.Quiz.findAll({where: ["'Comments'.'createdAt' is not null"],
                         include: [{model:models.Comment}],
 			order:[["Comments.updatedAt","DESC"]]}).then(function(quizes){
 		res.render('quizes/index',{quizes:quizes, errors:[],urlBusqueda:urlBusqueda});
