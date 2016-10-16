@@ -31,8 +31,8 @@
         break;
     default :       
         break;
- }%>  -->
- <div style='background-color: '<%=quiz.tema %>';'>
+ }%>  
+ <div style='background-color: '<%=quiz.tema %>';'>-->
 <!--<span class="badge" id="Tema"><% $nombretema; %></span>-->
 <form method="get" action="/quizes/<%= quiz.id %>/answer">
  Pregunta: <%=quiz.pregunta%> <p>
@@ -49,7 +49,7 @@
 		</form>
 	    <%}%>
 	    <br>
- </div>
+
 <p><a href="/quizes/<%=quiz.id%>/comments/new"><button>Nuevo comentario</button></a></p>
 
 <p><strong>Comentarios:</strong></p>
