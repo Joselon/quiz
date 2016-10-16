@@ -24,7 +24,7 @@
          break;
      case 'pink':
          colorea=quiz.tema;
-         quiz.tema='Entretenimiento';
+         nombretema'Entretenimiento';
          break;
      case 'GhostWhite':
          colorea=quiz.tema;
@@ -32,7 +32,7 @@
           break;
  };%>
  
- style='border-style:solid;border-color:<% colorea; %>;'>
+ style='border-style:solid;border-color:<% colorea %>;' >
  <h3><% nombretema;console.log(nombretema+' '+colorea);%></h3>
 <form method="get" action="/quizes/<%= quiz.id %>/answer">
  Pregunta: <%=quiz.pregunta%> <p>
