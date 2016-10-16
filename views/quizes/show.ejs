@@ -32,12 +32,12 @@
     default :       
         break;
  }%>  -->
- <div style='background-color: <%=quiz.tema%>;'>
+ <div style='background-color: '<%=quiz.tema %>';'>
 <!--<span class="badge" id="Tema"><% $nombretema; %></span>-->
 <form method="get" action="/quizes/<%= quiz.id %>/answer">
  Pregunta: <%=quiz.pregunta%> <p>
  <input type="text" name="respuesta" value='Respuesta' onclick="if (this.value=='Respuesta') this.value='';"/>
- <input type="submit" value="Enviar">
+ <input type="submit" value="Enviar"/>
 </form>
  <a href="<%= quiz.id %>/ahorcado"><button id="botoneditar">Juega al ahorcado</button></a>
 <%if (session.user) {%>
