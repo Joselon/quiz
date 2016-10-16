@@ -1,41 +1,8 @@
 <a href="javascript:history.back(1);"><button type="button">&laquo; Volver</button></a>
 <a href="/quizes"><button type="button"> Ir a Preguntas</button></a>
- <script>
-     var nombretema='Sin Respuesta!';
-     switch('<%=quiz.tema%>'){
-     case 'blue':
-        
-         nombretema='Geografía';
-         break;
-     case 'orange':
-        
-         nombretema='Deportes';
-         break;
-     case 'yellow':
-         
-         nombretema='Historia';
-         break;
-     case 'brown':
-         
-         nombretema='Arte y Literatura';
-         break;
-     case 'green':
-        
-         nombretema='Ciencia y Naturaleza';
-         break;
-     case 'pink':
-         
-         nombretema='Entretenimiento';
-         break;
-     case 'GhostWhite':
-        
-         nombretema='ENLACES';
-          break;
- };
-document.getElementById("tema").innterHTML=nombretema;
- </script>
+
 <div style='border-style:solid;border-color:<%=quiz.tema %>;' >
- <h3 id=tema"></h3>
+<h3 id=tema"></h3> 
 <form method="get" action="/quizes/<%= quiz.id %>/answer">
  Pregunta: <%=quiz.pregunta%> <p>
  <input type="text" name="respuesta" value='Respuesta' onclick="if (this.value=='Respuesta') this.value='';"/>
@@ -84,3 +51,37 @@ document.getElementById("tema").innterHTML=nombretema;
 		</p>
 	<%}%>
 <%}%>
+ <script>
+     var nombretema='Sin Respuesta!';
+     switch('<%=quiz.tema%>'){
+     case 'blue':
+        
+         nombretema='Geografía';
+         break;
+     case 'orange':
+        
+         nombretema='Deportes';
+         break;
+     case 'yellow':
+         
+         nombretema='Historia';
+         break;
+     case 'brown':
+         
+         nombretema='Arte y Literatura';
+         break;
+     case 'green':
+        
+         nombretema='Ciencia y Naturaleza';
+         break;
+     case 'pink':
+         
+         nombretema='Entretenimiento';
+         break;
+     case 'GhostWhite':
+        
+         nombretema='ENLACES';
+          break;
+ };
+document.getElementById("tema").innterHTML=nombretema;
+ </script>
