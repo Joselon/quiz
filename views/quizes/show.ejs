@@ -30,8 +30,9 @@
          nombretema='ENLACES';
           break;
  };%>
- <p class="badge" id="Tema"><% nombretema; %></p>
+ 
  <div style='border-style:solid;border-color:<% colorea; %>;'>
+ <h3  id="Tema"><% nombretema; %></h3>
 <form method="get" action="/quizes/<%= quiz.id %>/answer">
  Pregunta: <%=quiz.pregunta%> <p>
  <input type="text" name="respuesta" value='Respuesta' onclick="if (this.value=='Respuesta') this.value='';"/>
