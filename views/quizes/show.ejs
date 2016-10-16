@@ -1,39 +1,6 @@
 <a href="javascript:history.back(1);"><button type="button">&laquo; Volver</button></a>
 <a href="/quizes"><button type="button"> Ir a Preguntas</button></a>
-<!--<%var=$colorea='grey';var=$nombretema='null';switch(quiz.tema){
-    case 'blue':
-        $colorea=quiz.tema;
-        $nombretema='Geografía';
-        break;
-    case 'orange':
-        $colorea=quiz.tema;
-        $nombretema='Deportes';
-        break;
-    case 'yellow':
-        $colorea=quiz.tema;
-        $nombretema='Historia';
-        break;
-    case 'brown':
-        $colorea=quiz.tema;
-        $nombretema='Arte y Literatura';
-        break;
-    case 'green':
-        $colorea=quiz.tema;
-        $nombretema='Ciencia y Naturaleza';
-        break;
-    case 'pink':
-        $colorea=quiz.tema;
-        $nombretema='Entretenimiento';
-        break;
-    case 'GhostWhite':
-        $colorea=quiz.tema;
-        $nombretema='ENLACES';
-        break;
-    default :       
-        break;
- }%>  
- <div style='background-color: '<%=quiz.tema %>';'>-->
-<!--<span class="badge" id="Tema"><% $nombretema; %></span>-->
+
 <form method="get" action="/quizes/<%= quiz.id %>/answer">
  Pregunta: <%=quiz.pregunta%> <p>
  <input type="text" name="respuesta" value='Respuesta' onclick="if (this.value=='Respuesta') this.value='';"/>
