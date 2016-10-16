@@ -33,7 +33,7 @@
  };
 document.getElementById("tema").innterHTML=nombretema;
  </script>>
-<div style='border-style:solid;border-color:"<% colorea %>";' >
+<div style='border-style:solid;border-color:"<%=quiz.tema %>";' >
  <h3 id=tema"></h3>
 <form method="get" action="/quizes/<%= quiz.id %>/answer">
  Pregunta: <%=quiz.pregunta%> <p>
