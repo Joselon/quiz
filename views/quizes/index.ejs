@@ -24,8 +24,8 @@
 <table class="table table-hover" id="tabpreg">
 
 <% var i; for (i=0;i<quizes.length;i++) { %>
-	<tr><td align="left" id="preg"><a  href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a>
-	    <span class="badge" id="Tema" style="color:<%= quizes[i].tema %>;">@</span></td>
+	<tr><td align="left" id="preg"><span class="badge" id="Tema" style="color:<%= quizes[i].tema %>;">@</span><a  href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a>
+	    </td>
 	    <%if (session.user) {%>
 	      <td id="botoneditar"><a href="quizes/<%= quizes[i].id %>/edit"><button>editar</button></a></td>
 	      <td id="botonborrar" >
