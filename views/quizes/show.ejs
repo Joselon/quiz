@@ -1,5 +1,6 @@
 <a href="javascript:history.back(1);"><button type="button">&laquo; Volver</button></a>
 <a href="/quizes"><button type="button"> Ir a Preguntas</button></a>
+<%=quiz.tema %>
 <% var colorea='grey'; var nombretema='Sin Respuesta!'; switch(quiz.tema){
      case 'blue':
          colorea=quiz.tema;
@@ -32,7 +33,7 @@
  };%>
  
  <div style='border-style:solid;border-color:<% colorea; %>;'>
- <h3><%=quiz.tema %></h3>
+ <h3><% nombretema%></h3>
 <form method="get" action="/quizes/<%= quiz.id %>/answer">
  Pregunta: <%=quiz.pregunta%> <p>
  <input type="text" name="respuesta" value='Respuesta' onclick="if (this.value=='Respuesta') this.value='';"/>
