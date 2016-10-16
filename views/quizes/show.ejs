@@ -1,19 +1,19 @@
 <a href="javascript:history.back(1);"><button type="button">&laquo; Volver</button></a>
 <a href="/quizes"><button type="button"> Ir a Preguntas</button></a>
-<%var=colorea='grey';var=nombretema='null';switch(quiz.tema){
-     case 'blue':
+<% var=colorea='grey'; var nombretema='vacio';switch(quiz.tema){
+     case blue:
          colorea=quiz.tema;
          nombretema='Geografía';
          break;
-     case 'orange':
+     case orange:
          colorea=quiz.tema;
          nombretema='Deportes';
          break;
-     case 'yellow':
+     case yellow:
          colorea=quiz.tema;
          nombretema='Historia';
          break;
-     case 'brown':
+     case brown:
          colorea=quiz.tema;
          nombretema='Arte y Literatura';
          break;
@@ -29,15 +29,13 @@
          colorea=quiz.tema;
          nombretema='ENLACES';
           break;
-      default :       
-          break;
- }%>
- <p><span class="badge" id="Tema"><% nombretema; %></span></p>
+ };%>
+ <p></p>
  <div style='border-style:solid;border-color:<% colorea; %>;'>
 <form method="get" action="/quizes/<%= quiz.id %>/answer">
  Pregunta: <%=quiz.pregunta%> <p>
  <input type="text" name="respuesta" value='Respuesta' onclick="if (this.value=='Respuesta') this.value='';"/>
- <input type="submit" value="Enviar">
+ <input type="submit" value="Enviar"/>
 </form>
  <a href="<%= quiz.id %>/ahorcado"><button id="botoneditar">Juega al ahorcado</button></a>
 <%if (session.user) {%>
