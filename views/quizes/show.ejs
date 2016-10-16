@@ -1,6 +1,6 @@
 <a href="javascript:history.back(1);"><button type="button">&laquo; Volver</button></a>
 <a href="/quizes"><button type="button"> Ir a Preguntas</button></a>
-<%var=$colorea='grey';var=$nombretema='null';switch(quiz.tema){
+<!--<%var=$colorea='grey';var=$nombretema='null';switch(quiz.tema){
     case 'blue':
         $colorea=quiz.tema;
         $nombretema='Geografía';
@@ -31,9 +31,9 @@
         break;
     default :       
         break;
- }%>  
- <div style='background-color: <%$colorea;%>;'>
-<span class="badge" id="Tema"><% $nombretema; %></span>
+ }%>  -->
+ <div style='background-color: <%=quiz.tema%>;'>
+<!--<span class="badge" id="Tema"><% $nombretema; %></span>-->
 <form method="get" action="/quizes/<%= quiz.id %>/answer">
  Pregunta: <%=quiz.pregunta%> <p>
  <input type="text" name="respuesta" value='Respuesta' onclick="if (this.value=='Respuesta') this.value='';"/>
