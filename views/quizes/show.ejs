@@ -1,6 +1,7 @@
 <a href="javascript:history.back(1);"><button type="button">&laquo; Volver</button></a>
 <a href="/quizes"><button type="button"> Ir a Preguntas</button></a>
-
+<div style='border-style:solid;border-color:<%=quiz.tema %>;' >
+<h3 id="tema"></h3> 
 <form method="get" action="/quizes/<%= quiz.id %>/answer">
  Pregunta: <%=quiz.pregunta%> <p>
  <input type="text" name="respuesta" value='Respuesta' onclick="if (this.value=='Respuesta') this.value='';"/>
@@ -16,7 +17,7 @@
 		</form>
 	    <%}%>
 	    <br>
-
+</div>
 <p><a href="/quizes/<%=quiz.id%>/comments/new"><button>Nuevo comentario</button></a></p>
 
 <p><strong>Comentarios:</strong></p>
@@ -49,3 +50,31 @@
 		</p>
 	<%}%>
 <%}%>
+ <script>
+     var nombretema='Sin Respuesta';
+     switch('<%=quiz.tema%>'){
+     case 'blue':
+         nombretema='Geografía';
+         break;
+     case 'orange':
+         nombretema='Deportes';
+         break;
+     case 'yellow':
+         nombretema='Historia';
+         break;
+     case 'brown':
+         nombretema='Arte y Literatura';
+         break;
+     case 'green':
+         nombretema='Ciencia y Naturaleza';
+         break;
+     case 'pink':
+         nombretema='Entretenimiento';
+         break;
+     case 'GhostWhite':
+         nombretema='ENLACES';
+          break;
+ };
+Tema=document.getElementById("tema");
+Tema.innerHTML=nombretema;
+ </script>
