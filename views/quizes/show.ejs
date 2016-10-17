@@ -1,7 +1,7 @@
 <a href="javascript:history.back(1);"><button type="button">&laquo; Volver</button></a>
 <a href="/quizes"><button type="button"> Ir a Preguntas</button></a>
 <div style='border-style:solid;border-color:<%=quiz.tema %>;' >
-<h3 id="tema"></h3> 
+<h3 id="tema" style='color:<%=quiz.tema %>;'></h3> 
 <form method="get" action="/quizes/<%= quiz.id %>/answer">
  Pregunta: <%=quiz.pregunta%> <p>
  <input type="text" name="respuesta" value='Respuesta' onclick="if (this.value=='Respuesta') this.value='';"/>
