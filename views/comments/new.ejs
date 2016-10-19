@@ -2,7 +2,7 @@ Añadir comentario:
 (Si no eres usuario: Tu comentario sólo será visible cuando lo apruebe un usuario autorizado) <p>
 <form name="form1">
 <select name="tema" onchange="javascript:document.getElementById('comment').value=document.form1.tema.options[document.form1.tema.selectedIndex].value;">
- <option value=""> </option>
+ <option value="">Texto</option>
  <option value="">Hipervinculo</option>
  <option value="img-" >Enlace a Imágen</option>
  <option value="video-" >Enlace a Video</option>
@@ -10,10 +10,12 @@ Añadir comentario:
  <option value="iframe-">Enlace Embebido</option>
 </select>
 </form>
+Selecciona el tipo de comentario
 <form method="post" action="/quizes/<%=quizid%>/comments/">
 	<input type="text" id="comment" name="comment[texto]" placeholder="Respuesta - Cat"/></p>
 	<button type="submit">Enviar</button>
 </form>
+Escribe Comentario (o pega enlace)
 <a href="javascript:history.back(1);"><button type="button">Cancelar</button></a>
 <br>
-<p> Puedes poner un enlace, si quieres que se interprete como video, audio o imagen pon delante video-, audio- o img- (para videos de youtube escribir yt-)</p>
+<p> Puedes poner un enlace, si quieres que se interprete pon delante audio- img-,video-(para videos de youtube yt-) o iframe-</p>
