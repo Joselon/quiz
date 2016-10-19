@@ -1,13 +1,13 @@
 Añadir comentario:
 (Si no eres usuario: Tu comentario sólo será visible cuando lo apruebe un usuario autorizado) <p>
 <form name="form1">
-<select name="tema" onchange="javascript:document.getElementById("comment").value=document.form1.tema.options[document.form1.tema.selectedIndex].value">
- <option value="" >Texto</option>
- <option value="" >Hipervinculo</option>
+<select name="tema" onchange="javascript:document.getElementById("comment").value=document.form1.tema.options[document.form1.tema.selectedIndex].value;">
+ <option value="" > </option>
+ <option value="">Hipervinculo</option>
  <option value="img-" >Enlace a Imágen</option>
  <option value="video-" >Enlace a Video</option>
  <option value="yt-">Enlace a Youtube</option>
- <option value="iframe">Enlace Embebido</option>
+ <option value="iframe-">Enlace Embebido</option>
 </select>
 </form>
 <form name="envioComment" method="post" action="/quizes/<%=quizid%>/comments/">
