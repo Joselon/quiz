@@ -32,8 +32,8 @@ models.Quiz.findAll({
 		
 		res.render('statistics/show', {
 			stats: stats,
-			errors:[],
-			listQuizComment:listQuizComment
+			errors:[]
+		
 		});
 	}).catch(function(error){
 		next(error);
