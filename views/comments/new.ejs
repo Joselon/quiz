@@ -7,15 +7,17 @@ Añadir comentario:
  <option value="img-" >Enlace a Imágen</option>
  <option value="video-" >Enlace a Video</option>
  <option value="yt-">Enlace a Youtube</option>
+ <option value="audio-">Enlace a Audio</option>
  <option value="iframe-">Enlace Embebido</option>
 </select>
 </form>
 Selecciona el tipo de comentario
 <form method="post" action="/quizes/<%=quizid%>/comments/">
 	<input type="text" id="comment" name="comment[texto]" placeholder="Respuesta - Cat"/></p>
+<p>Escribe Comentario (o pega enlace)</p>
 	<button type="submit">Enviar</button>
 </form>
-Escribe Comentario (o pega enlace)
+
 <a href="javascript:history.back(1);"><button type="button">Cancelar</button></a>
 <br>
 <p> Puedes poner un enlace, si quieres que se interprete pon delante audio- img-,video-(para videos de youtube yt-) o iframe-</p>
