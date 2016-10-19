@@ -2,7 +2,7 @@
 <a href="/quizes"><button type="button"> Ir a Preguntas</button></a>
 <div style='border-style:solid;border-color:<%=quiz.tema %>;
     background: <%=quiz.tema %>;
-    background: -webkit-linear-gradient(white,<%=quiz.tema %>);  >
+    background: -webkit-linear-gradient(white,<%=quiz.tema %>);'  >
 <h3 id="tema" style='color:<%=quiz.tema %>;'></h3> 
 <%if(quiz.tema!='GhostWhite'){ %><form method="get" action="/quizes/<%= quiz.id %>/answer">
  Pregunta: <%=quiz.pregunta%> <p>
