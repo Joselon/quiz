@@ -1,7 +1,17 @@
 Añadir comentario:
 (Si no eres usuario: Tu comentario sólo será visible cuando lo apruebe un usuario autorizado) <p>
-
-<form method="post" action="/quizes/<%=quizid%>/comments/">
+<form name="form1">
+<select name="tema" onchange="document.envioCommnet.comment[texto]=javascript:document.form1.tema.options[document.form1.tema.selectedIndex].value">
+ <option value="" >Texto</option>
+ <option value="" >Hipervinculo</option>
+ <option value="img-" >Enlace a Imágen</option>
+ <option value="video-" >Enlace a Video</option>
+ <option value="yt-">Enlace a Youtube</option>
+ <option value="iframe">Enlace Embebido</option>
+</select>
+<a href="javascript:history.back(1);"><button type="button">Volver</button></a>
+</form>
+<form name="envioComment" method="post" action="/quizes/<%=quizid%>/comments/">
 	<input type="text" id="comment" name="comment[texto]" placeholder="Respuesta - Cat"/></p>
 	<button type="submit">Enviar</button>
 </form>
