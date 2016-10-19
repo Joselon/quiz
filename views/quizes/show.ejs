@@ -2,12 +2,13 @@
 <a href="/quizes"><button type="button"> Ir a Preguntas</button></a>
 <div style='border-style:solid;border-color:<%=quiz.tema %>;' >
 <h3 id="tema" style='color:<%=quiz.tema %>;'></h3> 
-<form method="get" action="/quizes/<%= quiz.id %>/answer">
+<%if(quiz.tema!='GhostWhite'){ %><form method="get" action="/quizes/<%= quiz.id %>/answer">
  Pregunta: <%=quiz.pregunta%> <p>
  <input type="text" name="respuesta" value='Respuesta' onclick="if (this.value=='Respuesta') this.value='';"/>
  <input type="submit" value="Enviar"/>
 </form>
- <a href="<%= quiz.id %>/ahorcado"><button id="botoneditar">Juega al ahorcado</button></a>
+ <a href="<%= quiz.id %>/ahorcado"><button id="botoneditar">Averigua con AHORCADO</button></a>
+ <%}%>
 <%if (session.user) {%>
 	     <a href="<%= quiz.id %>/edit"><button id="botoneditar">editar</button></a>
 	     <form method="post" action="<%= quiz.id %>?_method=delete">
