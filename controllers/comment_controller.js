@@ -42,8 +42,8 @@ exports.create=function(req,res) {
 // PUT /quizes/:quizId/comments/:commentId/publish
 exports.publish=function(req,res) {
 	req.comment.publicado=true;
-	
-	req.comment.save({fields: ["publicado"]})
+	req.comment.texto=req.comment.texto+' (Autorizado por: '+req.session.user.username+')';
+	req.comment.save({fields: ["texto","publicado"]})
 		.then( function(){res.redirect('/quizes/'+req.params.quizId);})
 		.catch(function(error){next(error)});
 };
