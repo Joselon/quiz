@@ -43,7 +43,7 @@ exports.create=function(req,res) {
 exports.publish=function(req,res) {
 	req.comment.publicado=true;
 	req.comment.texto=req.comment.texto+' (Publicado por: '+req.session.user.username+')';
-	req.comment.save({fields: ["texto"],["publicado"]})
+	req.comment.save({fields: ["texto","publicado"]})
 		.then( function(){res.redirect('/quizes/'+req.params.quizId);})
 		.catch(function(error){next(error)});
 };
