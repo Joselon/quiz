@@ -42,7 +42,7 @@ exports.create=function(req,res) {
 // PUT /quizes/:quizId/comments/:commentId/publish
 exports.publish=function(req,res) {
 	req.comment.publicado=true;
-	
+	req.comment.texto=req.comment.texto+' (Publicado por: '+req.session.user.username+')';
 	req.comment.save({fields: ["publicado"]})
 		.then( function(){res.redirect('/quizes/'+req.params.quizId);})
 		.catch(function(error){next(error)});
