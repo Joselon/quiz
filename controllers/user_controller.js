@@ -1,4 +1,4 @@
-var users= {admin: {id:1, username:"Administrador", password:"Grillao99"},
+var users= {admin: {id:1, username:"Administrador", password:"Patata1"},
 	    pepe: {id:2, username:"UsuarioPruebas1", password:"5678"},
 	    pruebas2: {id:3, username:"UsuarioPruebas2",password:"0123"}
 	   };
