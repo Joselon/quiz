@@ -1,5 +1,5 @@
-Añadir comentario:
-(Si no eres usuario: Tu comentario sólo será visible cuando lo apruebe un usuario autorizado) <p>
+<h2>ESCRIBE / PEGA ENLACE•</h2>
+<small>(Si no eres usuario, sólo será visible cuando lo apruebe un usuario autorizado)</small> <p>
 <form name="form1">
 <select name="tema" onchange="javascript:document.getElementById('comment').value=document.form1.tema.options[document.form1.tema.selectedIndex].value;">
  <option value="">Texto</option>
@@ -14,10 +14,10 @@ Añadir comentario:
 Selecciona el tipo de comentario
 <form method="post" action="/quizes/<%=quizid%>/comments/">
 	<input type="text" id="comment" name="comment[texto]" placeholder="Respuesta - Cat"/></p>
-<p>Escribe Comentario (o pega enlace)</p>
+<p>Escribe o pega enlace (selecciona tipo)</p>
 	<button type="submit">Enviar</button>
 </form>
 
 <a href="javascript:history.back(1);"><button type="button">Cancelar</button></a>
 <br>
-<p> Puedes poner un enlace, si quieres que se interprete pon delante audio- img-,video-(para videos de youtube yt-) o iframe-</p>
+<p> <small>Puedes poner un enlace, audio- img-,video-(para videos de youtube yt-) o iframe- </small></p>
