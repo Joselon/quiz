@@ -22,7 +22,7 @@
 	    <br>
 </div>
 <p><a href="/quizes/<%=quiz.id%>/comments/new"><button>Nuevo comentario</button></a></p>
-<p><form><input type="button" onclick="playAll()" value="Escuchar Todo"></form> 
+
 <p><strong>Comentarios:</strong></p>
 <%for(index in quiz.Comments){ var comentario='';var autoria='';%>
 	
@@ -85,11 +85,5 @@
 Tema=document.getElementById("tema");
 Tema.innerHTML=nombretema;
 
-function playAll(){
- var audios=document.getElementsByTagName("audio");
- if (audios!=null){
-  for (var i = 0; i < audios.length; i++)
-   audios[i].play();
-  }
- }
+
  </script>
