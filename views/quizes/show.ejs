@@ -5,7 +5,7 @@
     background: -webkit-linear-gradient(white,<%=quiz.tema %>);'  >
 <h4 id="tema" style='color:<%=quiz.tema %>;'></h4> 
 <%if(quiz.tema!='GhostWhite'){ %><form method="get" action="/quizes/<%= quiz.id %>/answer">
- <Pregunta:<h3> <%=quiz.pregunta%></h3> <p>
+ Pregunta:<h3> <%=quiz.pregunta%></h3> <p>
  <input type="text" name="respuesta" value='Respuesta' onclick="if (this.value=='Respuesta') this.value='';"/>
  <input type="submit" value="Enviar"/>
 </form>
