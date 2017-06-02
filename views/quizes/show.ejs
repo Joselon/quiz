@@ -13,7 +13,7 @@
  <button type="submit" value="Enviar"><span class="glyphicon glyphicon-share"></span></button>
 </div>
 </form>
- <a href="<%= quiz.id %>/ahorcado"><button class="btn btn-i" id="botonAhorcado">Averigua con AHORCADO</button></a>
+ <br><a href="<%= quiz.id %>/ahorcado"><button id="botonAhorcado">Pista-AHORCADO<span class="glyphicon glyphicon-text-height"></span></button></a><br>
  <%}%>
 <%if (session.user) {%>
 	     <a href="<%= quiz.id %>/edit"><button id="botoneditar"> <span class="glyphicon glyphicon-cog"></span></button></a>
