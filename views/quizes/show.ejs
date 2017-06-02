@@ -4,10 +4,14 @@
     background: <%=quiz.tema %>;
     background: -webkit-linear-gradient(white,<%=quiz.tema %>);'  >
 <h4 id="tema" style='color:<%=quiz.tema %>;'></h4> 
-<%if(quiz.tema!='GhostWhite'){ %><form method="get" action="/quizes/<%= quiz.id %>/answer">
- Pregunta:<h3> <%=quiz.pregunta%></h3> <p>
- <input type="text" name="respuesta" value='Respuesta' onclick="if (this.value=='Respuesta') this.value='';"/>
- <input type="submit" value="Enviar"/>
+<%if(quiz.tema!='GhostWhite'){ %>
+<form method="get" action="/quizes/<%= quiz.id %>/answer">
+<div class="form-group">
+<label for="pregunta"> Pregunta:</label>
+<h3 id="pregunta"> <%=quiz.pregunta%></h3> <p>
+ <input type="text" class="form-control" name="respuesta" value='Respuesta' onclick="if (this.value=='Respuesta') this.value='';"/>
+ <button type="submit" value="Enviar"><span class="glyphicon glyphicon-share"></span></button>
+</div>
 </form>
  <a href="<%= quiz.id %>/ahorcado"><button id="botonAhorcado">Averigua con AHORCADO</button></a>
  <%}%>
@@ -20,7 +24,7 @@
 	    <%}%>
 	    <br>
 </div>
-<p><a href="/quizes/<%=quiz.id%>/comments/new"><button>Nuevo comentario</button></a></p>
+<p><a href="/quizes/<%=quiz.id%>/comments/new"><button>Nuevo comentario <span class="glyphicon glyphicon-pencil"></span></button></a></p>
 
 <p><strong>Comentarios:</strong></p>
 <%for(index in quiz.Comments){ var comentario='';var autoria='';%>
