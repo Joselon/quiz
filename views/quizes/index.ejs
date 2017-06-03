@@ -54,9 +54,9 @@
 function dameUna(){
 
 <%var total=quizes.length;%>
-<%var aleatoria=Math.floor(total*Math.random()+1); if (!(aleatoria===undefined)){%>
+<%var aleatoria=Math.floor(total*Math.random()+1); %>
 $("#Escoge").attr("href",'quizes/<%=quizes[aleatoria].id%>');
-<%}>
+
 }
 </script>
 
