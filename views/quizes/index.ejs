@@ -1,5 +1,7 @@
- <label class="rem">Filtro:</label>
+ 
 <form name="form1">
+<div class="form-group">
+<label for="tema" class="rem">Filtro:</label>
 <button type="button" onclick="javascript:history.back(1);")><span class="glyphicon glyphicon-hand-left"></span> Volver</button>
 <select name="tema" onchange="javascript:window.open('/quizes?search=^'+document.form1.tema.options[document.form1.tema.selectedIndex].value,'_self');">
  <option value="*" >      </option>
@@ -12,6 +14,7 @@
  <option value="green">Ciencias y Naturaleza</option>
  <option value="orange">Deportes</option>
 </select>
+</div>
 </form>
 <form method='get' action='/quizes'>
 <div class="form-group">
