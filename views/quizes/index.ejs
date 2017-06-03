@@ -52,9 +52,9 @@
 
 <script>
 function dameUna(){
-<% if (!(quizes===undefined)){%>
+
 <%var total=quizes.length;%>
-<%var aleatoria=Math.floor(total*Math.random()+1);%>
+<%var aleatoria=Math.floor(total*Math.random()+1); if (!(aleatoria===undefined)){%>
 $("#Escoge").attr("href",'quizes/<%=quizes[aleatoria].id%>');
 <%}>
 }
