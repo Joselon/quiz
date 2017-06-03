@@ -53,7 +53,7 @@
 function dameUna(){
 <%var total=quizes.length;%>
 <%var aleatoria=Math.floor(total*Math.random()+1);%>
-window.location.href("quizes/"+<%=quizes[aleatoria].id%>);
+javascript:window.location.href("quizes/<%=quizes[aleatoria].id%>");
 
 }
 </script>
