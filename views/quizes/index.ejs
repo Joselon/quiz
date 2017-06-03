@@ -49,11 +49,14 @@
 </div>
 <p>
 <p>
+
 <script>
 function dameUna(){
+<% if (!(quizes===undefined)){%>
 <%var total=quizes.length;%>
 <%var aleatoria=Math.floor(total*Math.random()+1);%>
 $("#Escoge").attr("href",'quizes/<%=quizes[aleatoria].id%>');
-
+<%}>
 }
 </script>
+
