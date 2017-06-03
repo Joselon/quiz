@@ -56,8 +56,8 @@
 <script>
 function dameUna(){
 
-<%var total=quizes.length;%>
-<%var aleatoria=Math.floor(total*Math.random()+1); %>
+<%total=quizes.length;%>
+<%aleatoria=Math.floor(total*Math.random()+1); %>
 $("#Escoge").attr("href",'quizes/<%=quizes[aleatoria].id%>');
 
 }
