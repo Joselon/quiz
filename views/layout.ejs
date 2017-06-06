@@ -10,6 +10,9 @@
   <script  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"> </script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+  $(".drag").draggable({ stack: ".drag" });
+  </script>
   <!--  <link rel='stylesheet' type='text/css' href='/stylesheets/style.css' />
     <link rel='stylesheet'
 	 type='text/css'
@@ -55,9 +58,7 @@
       .row.content {height:auto;}
     }
   </style>
-  <script>
-  $(".drag").draggable({ stack: ".draggable" });
-  </script>
+ 
   </head>
   
   <body>
