@@ -6,7 +6,7 @@ body{
 	font-family: Trebuchet MS, verdana, arial, sans-serif;
 }
 .botonletra{
-	font-size: 0.9em;
+	/*font-size: 0.9em;*/
 	margin: 2px;
 	
 	text-align: center;
@@ -115,7 +115,7 @@ $(document).ready(function(){
 				escribePalabra(palabraEscogida, aciertos);
 				//miro si ha ganado
 				if(estanTodas(aciertos,palabraEscogida)){
-					var caja = $('<div class="dialogletra" title="¡Acertada!">Felicidades! has adivinado la respuesta!!</div>');
+					var caja = $('<div class="dialogletra" title="¡Acertada!"><%quiz.respuesta%> ¡A por otra!</div>');
 					caja.dialog({
 					modal: true,
 					buttons: {
@@ -132,7 +132,7 @@ $(document).ready(function(){
 				dibujaAhorcado(numFallos);
 				//miro si se ha perdido
 				if(numFallos==6){
-					var caja = $('<div class="dialogletra" title="¡Has Perdido!"> ¡Vuelve a intentarlo!</div>');
+					var caja = $('<div class="dialogletra" title="¡Has Perdido!"> ¡Pasa el turno!</div>');
 					caja.dialog({
 					modal: true,
 					buttons: {
@@ -272,14 +272,15 @@ function dibujaAhorcado(numerrores){
 
 
 </script>
-<div id="dibujoahorcado">
-	<canvas id="canvasahorcado" width="320" height="250">
-	El Ahorcado sólo funciona en navegadores que soporten Canvas. Actualízate a Firefox o Chrome, por poner dos posibilidades.
-	</canvas>
-</div>
 <div> <%= quiz.pregunta %>
 <div id="letras">
 </div>
 <div id="botonesletras"></div>
 </div>
-<a href='/quizes/<%=quiz.id%>'>Volver</a>
+<a href='/quizes/<%=quiz.id%>'><span class="glyphicon glyphicon-hand-left"></span>Volver a la Pregunta...</a>
+
+<div id="dibujoahorcado">
+	<canvas id="canvasahorcado" width="320" height="250">
+	El Ahorcado sólo funciona en navegadores que soporten Canvas. Actualízate a Firefox o Chrome, por poner dos posibilidades.
+	</canvas>
+</div>
