@@ -1,4 +1,4 @@
-<a href="javascript:history.back(1);"><button type="button">&laquo; Volver</button></a>
+<a href="javascript:history.back(1);"><button type="button"><span class="glyphicon glyphicon-hand-left"></span> Volver</button></a>
 <a href="/quizes"><button type="button"> Ir a Preguntas</button></a>
 <div style='border-style:solid;border-color:<%=quiz.tema %>;
     background: <%=quiz.tema %>;
@@ -14,7 +14,14 @@
 </div>
 </form>
  <br><a href="<%= quiz.id %>/ahorcado"><button id="botonAhorcado">Pista-AHORCADO<span class="glyphicon glyphicon-text-height"></span></button></a><br>
- <%}%>
+ <%}else if(quiz.pregunta=='DADO'){%>
+<script>
+ function para(){
+}
+</script>
+<button id="para" onclick="para();"></button>
+<img id="dado">
+<%}%>
 <%if (session.user) {%>
 	     <a href="<%= quiz.id %>/edit"><button id="botoneditar"> <span class="glyphicon glyphicon-cog"></span></button></a>
 	     <form method="post" action="<%= quiz.id %>?_method=delete">
