@@ -16,11 +16,14 @@
  <br><a href="<%= quiz.id %>/ahorcado"><button id="botonAhorcado">Pista-AHORCADO<span class="glyphicon glyphicon-text-height"></span></button></a><br>
  <%}else if(quiz.pregunta=='DADO'){%>
 <script>
+var tiradas=["https://www.dropbox.com/s/7d04iinsw30j67t/Uno.jpg?dl=1", "https://www.dropbox.com/s/obagu9l5kukpm53/Foto%207-6-17%207%2059%2005.jpg?dl=1","https://www.dropbox.com/s/u2vtnswulrpi36l/Foto%207-6-17%208%2001%2031.jpg?dl=1","https://www.dropbox.com/s/fmcd3i9odadtl2q/Foto%207-6-17%207%2059%2047.jpg?dl=1","https://www.dropbox.com/s/6zpumn0o1iqp5ru/Foto%207-6-17%208%2000%2020.jpg?dl=1","https://www.dropbox.com/s/n2dpodpqlxisow8/Foto%207-6-17%208%2001%2002.jpg?dl=1"];
+var alea=Math.floor(6*Math.random());
  function para(){
+ $("#dado").attr("scr",tiradas[alea]);
 }
 </script>
-<button id="para" onclick="para();"></button>
-<img id="dado">
+<button id="para" onclick="para();">Para</button>
+<img id="dado" scr="https://www.dropbox.com/s/pu8mfr0og2mxz6n/dado.gif?dl=1">
 <%}%>
 <%if (session.user) {%>
 	     <a href="<%= quiz.id %>/edit"><button id="botoneditar"> <span class="glyphicon glyphicon-cog"></span></button></a>
