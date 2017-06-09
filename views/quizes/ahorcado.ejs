@@ -115,7 +115,7 @@ $(document).ready(function(){
 				escribePalabra(palabraEscogida, aciertos);
 				//miro si ha ganado
 				if(estanTodas(aciertos,palabraEscogida)){
-					var caja = $('<div class="dialogletra" title="¡Acertada!"><%quiz.respuesta%> ¡A por otra!</div>');
+					var caja = $('<div class="dialogletra" title="¡Acertada!"><%=quiz.respuesta%> ¡A por otra!</div>');
 					caja.dialog({
 					modal: true,
 					buttons: {
