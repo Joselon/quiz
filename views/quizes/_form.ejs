@@ -1,7 +1,7 @@
 <label for="preg" class="rem">Pregunta:</label>
-<input type="text" id="preg" name="quiz[pregunta]" value="<%= quiz.pregunta %>" onclick="if (this.value=='Pregunta') this.value='';"/><p>
+<textarea id="preg" type="text" class="form-control"  name="quiz[pregunta]" value="<%= quiz.pregunta %>" onclick="if (this.value=='Pregunta') this.value='';"/></textarea><p>
 <label for="resp" class="rem">Respuesta:</label>
-<input type="text" id="resp" name="quiz[respuesta]" value="<%= quiz.respuesta %>" onclick="if (this.value=='Respuesta') this.value='';"/><p>
+<textarea id="resp" type="text" class="form-control"  name="quiz[respuesta]" value="<%= quiz.respuesta %>" onclick="if (this.value=='Respuesta') this.value='';"/></textarea><p>
 <label for="tema" class="rem">Tema:</label>
 <select name="quiz[tema]">
  <option value="blue" <%= (quiz.tema === "blue") ? "selected" : "" %> >Geografía</option>
