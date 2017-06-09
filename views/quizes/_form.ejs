@@ -1,5 +1,5 @@
 <label for="preg" class="rem">Pregunta:</label>
-<input id="preg"  type="text" class="form-control"  name="quiz[pregunta]" value="<%= quiz.pregunta %>" /><p>
+<input id="preg"  type="text" class="form-control"  name="quiz[pregunta]" value="<%= quiz.pregunta %>" onclick="if (this.value=='Pregunta') this.value='';"/><p>
 <label for="resp" class="rem">Respuesta:</label>
 <input id="resp"  type="text" class="form-control"  name="quiz[respuesta]" value="<%= quiz.respuesta %>" onclick="if (this.value=='Respuesta') this.value='';"/><p>
 <label for="tema" class="rem">Tema:</label>
