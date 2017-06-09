@@ -22,8 +22,10 @@ var alea=Math.floor(6*Math.random());
  $("#dado").attr("scr",tiradas[alea]);
 }
 </script>
+<div class="container-fluid">
 <button id="para" onclick="para();">Para</button>
-<img id="dado" scr="https://www.dropbox.com/s/pu8mfr0og2mxz6n/dado.gif?dl=1">
+<img id="dado" class="img-responsive" alt="dado" scr="https://www.dropbox.com/s/pu8mfr0og2mxz6n/dado.gif?dl=1">
+</div>
 <%}%>
 <%if (session.user) {%>
 	     <a href="<%= quiz.id %>/edit"><button id="botoneditar"> <span class="glyphicon glyphicon-cog"></span></button></a>
@@ -45,7 +47,7 @@ var alea=Math.floor(6*Math.random());
 		<%if(quiz.Comments[index].texto.indexOf('(')!=-1){comentario=quiz.Comments[index].texto.substr(0,quiz.Comments[index].texto.indexOf('(')); autoria=quiz.Comments[index].texto.substr(quiz.Comments[index].texto.indexOf('('),quiz.Comments[index].texto.length);}
 		else{ comentario=quiz.Comments[index].texto;autoria=''} %>
         <div class='container comenteiner'><p style="border: white 8px outset">-<%if(comentario.substr(0,4)=='http'){ var $enlace=comentario%><a href="<%=$enlace%>" target="_blank"><%=comentario%><p><small><%=autoria%></small> </p></a>
-            <%}else if(comentario.substr(0,3)=='img'){var $enlace=comentario.substring(4)%> <img class="img-responsive" src="<%=$enlace%>" alt="<%=$enlace%>" style="width:100%"><p><small><%=autoria%></small> </p>
+            <%}else if(comentario.substr(0,3)=='img'){var $enlace=comentario.substring(4)%> <img class="img-responsive" src="<%=$enlace%>" alt="<%=$enlace%>"><p><small><%=autoria%></small> </p>
             <%}else if(comentario.substr(0,5)=='audio'){var $enlace=comentario.substring(6)%> <audio controls preload="none" style="width:100%"><source src="<%=$enlace%>" type="audio/mpeg" >Your browser does not support the audio tag.</audio><p><small><%=autoria%></small> </p>
             <%}else if(comentario.substr(0,5)=='video'){var $enlace=comentario.substring(6)%> <video controls preload="none" style="width:100%"><source src="<%=$enlace%>" type="video/mp4" > Your browser does not support the video tag.</video><p><small><%=autoria%></small> </p>
             <%}else if(comentario.substr(0,2)=='yt'){ if(comentario.indexOf('=')!=-1){var $enlace=comentario.substring(quiz.Comments[index].texto.indexOf('=')+1)}else{var $enlace=comentario.substring(quiz.Comments[index].texto.lastIndexOf('/'))}%> <iframe style="width:100%" src="https://www.youtube.com/embed/<%=$enlace%>" frameborder="0" allowfullscreen></iframe><p><small><%=autoria%></small> </p>
