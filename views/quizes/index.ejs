@@ -26,7 +26,7 @@
 
 </div>
 </form>
-<button type="button" class="btn btn-default" onclick="dameUna();"><a id="Escoge"><small>Saca una al azar de</small><span class="badge"><%=quizes.length%></span><span class="glyphicon glyphicon-hand-down"></span></a></button>
+<button type="button" class="btn btn-default" onclick="dameUna();"><a id="Escoge"><span class="glyphicon glyphicon-hand-down"></span><small>  Saca una al azar de </small> <span class="badge"><%=quizes.length%></span> </a></button>
 <%if(session.user){%>
 <a id="BotonCrea" href="/quizes/new"><button type="button">Crear pregunta <span class="glyphicon glyphicon-pencil"></span></button></a>
 <%}%>
