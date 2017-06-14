@@ -28,7 +28,8 @@ function tira(){
 }
  $(function () {
         $(".ficha").draggable({            
-            stack: ".ficha"
+            stack: ".ficha",
+	    helper: "clone"
         });
     });
      $(function () {
