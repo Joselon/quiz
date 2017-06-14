@@ -44,7 +44,8 @@ function tira(){
     $("#Tablero").droppable({  
       drop: function(e, ui){  
         $(ui.draggable).clone().appendTo($(this));  
-      }  
+       }  
+     });
     });
 </script>
 <div class="container-fluid thumbnail" style="background-color:white">
