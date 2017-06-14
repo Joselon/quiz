@@ -35,14 +35,15 @@ function tira(){
     });
      $(function () {
         $(".dado").draggable({            
-            stack: ".ficha",
+            stack: ".dado",
 	    start:tira,
 	    stop:para
         });
     });
     
    $(function () {
-    $("#Tablero").droppable({  
+    $("#Tablero").droppable({
+      stack: ".ficha",
       drop: function(e, ui){  
         $(ui.draggable).clone().appendTo($(this));  
        }  
