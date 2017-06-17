@@ -11,6 +11,41 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"> </script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+<script>
+var tiradas=["https://www.dropbox.com/s/92om1giidyk3lyv/01.png?dl=1", "https://www.dropbox.com/s/ciafr1casuiv18y/02.png?dl=1","https://www.dropbox.com/s/wc39zmg7d4t5cmo/03.png?dl=1","https://www.dropbox.com/s/ewvkou70yvpnh8r/04.png?dl=1","https://www.dropbox.com/s/4n2ge9zrn4i6y12/05.png?dl=1","https://www.dropbox.com/s/cbaq0blxfarqzie/06.png?dl=1"];
+var alea=Math.floor(6*Math.random());
+ function para(){
+alea=Math.floor(6*Math.random());
+ $("#dado").attr("src",tiradas[alea]);
+}
+
+function tira(){
+ $("#dado").attr("src","https://www.dropbox.com/s/pu8mfr0og2mxz6n/dado.gif?dl=1");
+}
+ $(function () {
+        $(".ficha").draggable({            
+            stack: ".ficha",
+	   // helper: "clone",
+	  //  appendTo:"#Tablero"
+        });
+    });
+     $(function () {
+        $(".dado").draggable({            
+            stack: ".dado",
+	    start:tira,
+	    stop:para
+        });
+    });
+    
+   $(function () {
+    $("#Tablero").droppable({
+      stack: ".ficha",
+     // drop: function(e, ui){  
+      //  $(ui.draggable).clone().appendTo($(this));  
+      // }  
+     });
+    });
+</script>
   <!--  <link rel='stylesheet' type='text/css' href='/stylesheets/style.css' />
     <link rel='stylesheet'
 	 type='text/css'
@@ -152,6 +187,21 @@
 			<div class="well">
  
  <%- body %></div>
+</section>
+<section class='main container-fluid text-center' id='Juego'>
+<div class="container-fluid thumbnail" style="background-color:white">
+<img id="dado" class="img-responsive dado" alt="dado" src="https://www.dropbox.com/s/pu8mfr0og2mxz6n/dado.gif?dl=1" style="width:20%;">
+<span><img class="ficha" alt="ficha azul" style="color:blue;width:10%;" src="https://www.dropbox.com/s/o6j5hr8vis3rksz/newgarden-trivial.png?dl=1"></img></span>
+ 
+ <span class="glyphicon glyphicon-tower ficha" style="color:blue"></span>
+ <span class="glyphicon glyphicon-tower ficha" style="color:brown"></span>
+ <span class="glyphicon glyphicon-tower ficha" style="color:pink"></span>
+ <span class="glyphicon glyphicon-tower ficha" style="color:yellow"></span>
+ <span class="glyphicon glyphicon-tower ficha" style="color:green"></span>
+ <span class="glyphicon glyphicon-tower ficha" style="color:orange"></span>
+ <br>
+ <img class="img-responsive" id="Tablero" src="https://www.dropbox.com/s/mzxagusl4ccs8dv/TableroQuiz.jpg?dl=1" alt="TableroDropable">
+</div>
 		</section>
 		
 		<footer class='main container-fluid text-center' id='f1'>
