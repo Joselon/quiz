@@ -9,7 +9,7 @@ var statsController=require('../controllers/stats_controller');
 /* GET home page. */
 router.get('/', function(req, res) {
  // console.log("ESTOY EN INDEX");
-  res.render('index', { title: 'Quiz',errors:[] });
+  res.render('index', { title: 'JNR',errors:[] });
 });
 
 //GET pagina de autor

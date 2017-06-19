@@ -8,7 +8,7 @@ section > div {padding: 20px;background: #f61;}
 header {background: #f61; text-align: center;}
 nav {background: #f61;}
 section {background: #f61; text-align: center;overflow:auto;word-wrap: break-word;}
-#tabpreg,#preg,#Tema,a  {background: #f61;color:black;}
+#tabpreg,#preg,#Tema,#Enlace {background: #f61;color:black;border: white 8px outset}
 #botoneditar,#botonborrar,#BotonCrea {background: #f61;}
 input,form, button  {background: #f61;}
 footer {background: #f61; text-align: center;}
@@ -18,3 +18,78 @@ nav span {margin: 0px 10px 0px 0px;}
 #ErrorMsgs {color: #f61; font-size:smaler}
 
 .right	{float:right;}
+
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;}
+    }
+/* Botón */
+.botonText{
+       color:white;
+}
+.boton {
+	display: inline-block;
+	zoom: 2;
+	*display: inline;
+	vertical-align: baseline;
+	cursor: pointer;
+	text-decoration: none;
+	//font: 12px Arial;
+	padding: .5em 2em .55em;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+.boton:hover { text-decoration: none; }
+ 
+/* Redondez */
+ 
+.redondo {
+	-webkit-border-radius: 2em;
+	-moz-border-radius: 2em;
+	border-radius: 2em;
+}
+ 
+/* Color */
+ 
+.rojo {
+	color: #d7d7d7;
+	border: solid 1px #333;
+	background: #333;
+	background: -webkit-gradient(linear, left top, left bottom, from(#b22222), to(#000));
+	background: -moz-linear-gradient(top,  #b22222,  #000);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#b22222', endColorstr='#000000');
+}
+.rojo:hover {
+	background: #000;
+	background: -webkit-gradient(linear, left top, left bottom, from(#DC143C), to(#000));
+	background: -moz-linear-gradient(top,  #DC143C,  #000);
+}
