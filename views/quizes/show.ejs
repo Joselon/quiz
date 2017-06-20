@@ -43,10 +43,10 @@ function tira(){
     
    $(function () {
     $("#Tablero").droppable({
-      stack: ".ficha",
-     // drop: function(e, ui){  
-      //  $(ui.draggable).clone().appendTo($(this));  
-      // }  
+      stack: ".Tablero",
+      drop: function(e, ui){  
+      $(ui.draggable).clone().appendTo($(this));  
+      }  
      });
     });
 </script>
@@ -61,7 +61,11 @@ function tira(){
  <span class="glyphicon glyphicon-tower ficha" style="color:green"></span>
  <span class="glyphicon glyphicon-tower ficha" style="color:orange"></span>
  <br>
- <img class="img-responsive" id="Tablero" src="<%=quiz.respuesta%>" alt="TableroDropable">
+ <img class="img-responsive" id="Tablero" src="<%=quiz.respuesta%>" alt="Tablero">
+<p class="bg-warning">
+Crea tu propio tablero haciendo Login y creando ina pregunta : TABLERO-NombreDelJuego y respuesta la URL de la imagen del tablero que quieras.
+</p>
+
 </div>
 <%}%>
 <%if (session.user) {%>
