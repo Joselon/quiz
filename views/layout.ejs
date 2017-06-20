@@ -7,42 +7,7 @@
      <meta name="viewport" content="width=device-width, initial-scale=1">
  
 
-<script>
-var dado = document.getElementById ("dado");
-var tiradas=["https://www.dropbox.com/s/92om1giidyk3lyv/01.png?dl=1", "https://www.dropbox.com/s/ciafr1casuiv18y/02.png?dl=1","https://www.dropbox.com/s/wc39zmg7d4t5cmo/03.png?dl=1","https://www.dropbox.com/s/ewvkou70yvpnh8r/04.png?dl=1","https://www.dropbox.com/s/4n2ge9zrn4i6y12/05.png?dl=1","https://www.dropbox.com/s/cbaq0blxfarqzie/06.png?dl=1"];
-var alea=Math.floor(6*Math.random());
- function para(){
-alea=Math.floor(6*Math.random());
- dado.src=tiradas[alea];
-}
 
-function tira(){
- dado.src="https://www.dropbox.com/s/pu8mfr0og2mxz6n/dado.gif?dl=1";
-}
-/* $(function () {
-        $(".ficha").draggable({            
-            stack: ".ficha",
-	   // helper: "clone",
-	  //  appendTo:"#Tablero"
-        });
-    });
-     $(function () {
-        $(".dado").draggable({            
-            stack: ".dado",
-	    start:tira,
-	    stop:para
-        });
-    });
-    
-   $(function () {
-    $("#Tablero").droppable({
-      stack: ".ficha",
-     // drop: function(e, ui){  
-      //  $(ui.draggable).clone().appendTo($(this));  
-      // }  
-     });
-    }); */
-</script>
 <link rel='stylesheet' type='text/css' href='/stylesheets/style.css' />
   <link rel='stylesheet'
 	 type='text/css'
@@ -129,6 +94,41 @@ function tira(){
  <span class="glyphicon glyphicon-knight"></span>
  
 		</footer>
-		
+	<script>
+var dado = document.getElementById ("dado");
+var tiradas=["https://www.dropbox.com/s/92om1giidyk3lyv/01.png?dl=1", "https://www.dropbox.com/s/ciafr1casuiv18y/02.png?dl=1","https://www.dropbox.com/s/wc39zmg7d4t5cmo/03.png?dl=1","https://www.dropbox.com/s/ewvkou70yvpnh8r/04.png?dl=1","https://www.dropbox.com/s/4n2ge9zrn4i6y12/05.png?dl=1","https://www.dropbox.com/s/cbaq0blxfarqzie/06.png?dl=1"];
+var alea=Math.floor(6*Math.random());
+ function para(){
+alea=Math.floor(6*Math.random());
+ dado.src=tiradas[alea];
+}
+
+function tira(){
+ dado.src="https://www.dropbox.com/s/pu8mfr0og2mxz6n/dado.gif?dl=1";
+}
+/* $(function () {
+        $(".ficha").draggable({            
+            stack: ".ficha",
+	   // helper: "clone",
+	  //  appendTo:"#Tablero"
+        });
+    });
+     $(function () {
+        $(".dado").draggable({            
+            stack: ".dado",
+	    start:tira,
+	    stop:para
+        });
+    });
+    
+   $(function () {
+    $("#Tablero").droppable({
+      stack: ".ficha",
+     // drop: function(e, ui){  
+      //  $(ui.draggable).clone().appendTo($(this));  
+      // }  
+     });
+    }); */
+</script>	
   </body>
 </html>
