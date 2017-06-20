@@ -13,11 +13,11 @@ var tiradas=["https://www.dropbox.com/s/92om1giidyk3lyv/01.png?dl=1", "https://w
 var alea=Math.floor(6*Math.random());
  function para(){
 alea=Math.floor(6*Math.random());
- dado.attr("src",tiradas[alea]);
+ dado.src=tiradas[alea];
 }
 
 function tira(){
- dado.attr("src","https://www.dropbox.com/s/pu8mfr0og2mxz6n/dado.gif?dl=1");
+ dado.src="https://www.dropbox.com/s/pu8mfr0og2mxz6n/dado.gif?dl=1";
 }
 /* $(function () {
         $(".ficha").draggable({            
