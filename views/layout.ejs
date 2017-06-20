@@ -5,21 +5,19 @@
 	<meta charset='utf-8'>
     <title>JNR</title>
      <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
 
 <script>
+var dado = document.getElementById ("dado");
 var tiradas=["https://www.dropbox.com/s/92om1giidyk3lyv/01.png?dl=1", "https://www.dropbox.com/s/ciafr1casuiv18y/02.png?dl=1","https://www.dropbox.com/s/wc39zmg7d4t5cmo/03.png?dl=1","https://www.dropbox.com/s/ewvkou70yvpnh8r/04.png?dl=1","https://www.dropbox.com/s/4n2ge9zrn4i6y12/05.png?dl=1","https://www.dropbox.com/s/cbaq0blxfarqzie/06.png?dl=1"];
 var alea=Math.floor(6*Math.random());
  function para(){
 alea=Math.floor(6*Math.random());
- $("#dado").attr("src",tiradas[alea]);
+ dado.attr("src",tiradas[alea]);
 }
 
 function tira(){
- $("#dado").attr("src","https://www.dropbox.com/s/pu8mfr0og2mxz6n/dado.gif?dl=1");
+ dado.attr("src","https://www.dropbox.com/s/pu8mfr0og2mxz6n/dado.gif?dl=1");
 }
 /* $(function () {
         $(".ficha").draggable({            
@@ -67,16 +65,16 @@ function tira(){
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				</button>
-			<a class="navbar-brand" href="#">JoseloNode</a>
+			<a class="navbar-brand" href="#">JNR</a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class='main nav navbar-nav' id='n1' role='navegation'>
 				<li class="active"><a href='/'>Inicio</a></li>
 				<li><a href='/quizes'>CARTAS</a></li>
-<li><a href='https://joselonode.herokuapp.com/quizes?search=TABLERO'>TABLEROS</a></span></li>
-				<li><a href='http://joselonode.herokuapp.com/quizes?search=%C2%BFQu%C3%A9+el%C3%ADcula+es%3F'>Fotogramas</a></span></li>
-<li><a href='https://joselonode.herokuapp.com/quizes?search=%C2%BFGrupo'>Musical</a></span></li>
-<li><a href='https://joselonode.herokuapp.com/quizes?search=%C2%BFQui%C3%A9n+es%3F'>¿Quién es?</a></span></li>
+<li><a href='/quizes?search=TABLERO'>TABLEROS</a></span></li>
+				<li><a href='/quizes?search=%C2%BFQu%C3%A9+el%C3%ADcula+es%3F'>Fotogramas</a></span></li>
+<li><a href='/quizes?search=%C2%BFGrupo'>Musical</a></span></li>
+<li><a href='/quizes?search=%C2%BFQui%C3%A9n+es%3F'>¿Quién es?</a></span></li>
 <li><a href='https://joselonode.herokuapp.com/quizes/266'>Anota</a></span></li>
 				<li><a href='/author'>Más...</a></span></li>
 				<li><a href='/statistics'><small>Estadisticas</small></a></li>
