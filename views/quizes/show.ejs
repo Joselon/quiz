@@ -63,6 +63,9 @@ function tira(){
  <br>
  <img class="img-responsive" id="Tablero" src="<%=quiz.respuesta%>" alt="TableroDropable">
 </div>
+<p class="bg-warning">
+Crea tu propio tablero haciendo Login y creando ina pregunta : TABLERO-NombreDelJuego y respuesta la URL de la imagen del tablero que quieras.
+</p>
 <%}%>
 <%if (session.user) {%>
 	     <a href="<%= quiz.id %>/edit"><button id="botoneditar"> <span class="glyphicon glyphicon-cog"></span></button></a>
