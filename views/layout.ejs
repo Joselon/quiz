@@ -73,17 +73,17 @@
 </section>
 <section class='main container-fluid text-center' id='Juego'>
 <div class="container-fluid thumbnail" style="background-color:white">
-<img id="dado" class="img-responsive dado" alt="dado" src="https://www.dropbox.com/s/pu8mfr0og2mxz6n/dado.gif?dl=1" onclick="para()" ondblclick="tira()" style="width:20%;">
-<span><img class="ficha" alt="ficha azul" style="color:blue;width:10%;" src="https://www.dropbox.com/s/o6j5hr8vis3rksz/newgarden-trivial.png?dl=1"></img></span>
+<div ondrop="drop(event)" ondragover="allowDrop(event)"><img id="dado" draggable="true" ondragstart="tira();drag(event);" class="img-responsive dado" alt="dado" src="https://www.dropbox.com/s/pu8mfr0og2mxz6n/dado.gif?dl=1" onclick="para()" ondblclick="tira()" style="width:20%;">
+<span><img draggable="true" class="ficha" alt="ficha azul" style="color:blue;width:10%;" src="https://www.dropbox.com/s/o6j5hr8vis3rksz/newgarden-trivial.png?dl=1"></img></span>
  
  <span class="glyphicon glyphicon-tower ficha" style="color:blue"></span>
  <span class="glyphicon glyphicon-tower ficha" style="color:brown"></span>
  <span class="glyphicon glyphicon-tower ficha" style="color:pink"></span>
  <span class="glyphicon glyphicon-tower ficha" style="color:yellow"></span>
  <span class="glyphicon glyphicon-tower ficha" style="color:green"></span>
- <span class="glyphicon glyphicon-tower ficha" style="color:orange"></span>
+ <span class="glyphicon glyphicon-tower ficha" style="color:orange"></span></div>
  <br>
- <img class="img-responsive" id="Tablero" src="https://www.dropbox.com/s/mzxagusl4ccs8dv/TableroQuiz.jpg?dl=1" alt="TableroDropable">
+ <img class="img-responsive" ondrop="drop(event)" ondragover="allowDrop(event)" id="Tablero" src="https://www.dropbox.com/s/mzxagusl4ccs8dv/TableroQuiz.jpg?dl=1" alt="TableroDropable">
 </div>
 		</section>
 		
@@ -129,6 +129,19 @@ function tira(){
       // }  
      });
     }); */
+    function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
 </script>	
   </body>
 </html>
