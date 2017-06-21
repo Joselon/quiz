@@ -16,7 +16,7 @@
  <br><a class="botonText" href="<%= quiz.id %>/ahorcado"><button id="botonAhorcado" class="boton rojo redondo"><small>Pista-AHORCADO <span class="glyphicon glyphicon-text-height"></span></button></small></a><br>
  <%}else if(quiz.pregunta.substr(0,7)=='TABLERO'){%>
 <script>
-var tiradas=["https://www.dropbox.com/s/92om1giidyk3lyv/01.png?dl=1", "https://www.dropbox.com/s/ciafr1casuiv18y/02.png?dl=1","https://www.dropbox.com/s/wc39zmg7d4t5cmo/03.png?dl=1","https://www.dropbox.com/s/ewvkou70yvpnh8r/04.png?dl=1","https://www.dropbox.com/s/4n2ge9zrn4i6y12/05.png?dl=1","https://www.dropbox.com/s/cbaq0blxfarqzie/06.png?dl=1"];
+var tiradas=["/images/01.png", "/images/02.png","/images/03.png","/images/04.png","/images/05.png","/images/06.png"];
 var alea=Math.floor(6*Math.random());
  function para(){
 alea=Math.floor(6*Math.random());
@@ -24,7 +24,7 @@ alea=Math.floor(6*Math.random());
 }
 
 function tira(){
- $("#dado").attr("src","https://www.dropbox.com/s/pu8mfr0og2mxz6n/dado.gif?dl=1");
+ $("#dado").attr("src","/images/dado.gif");
 }
  $(function () {
         $(".ficha").draggable({            
