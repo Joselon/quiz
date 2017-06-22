@@ -6,10 +6,10 @@
     <title>JNR</title>
      <meta name="viewport" content="width=device-width, initial-scale=1">
 
--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script  src="https://code.jquery.com/jquery-1.12.4.min.js"  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel='stylesheet' type='text/css' href='/stylesheets/style.css' />
   <link rel='stylesheet'
 	 type='text/css'
@@ -23,7 +23,7 @@
   </head>
   
   <body>
-	
+	<header>
 	<nav class="navbar navbar-inverse">
  	 <div class="container-fluid">
     		<div class="navbar-header">
@@ -35,10 +35,10 @@
 			<a class="navbar-brand" href="#">JNR</a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
-			<ul class='main nav navbar-nav' id='n1' role='navegation'>
+			<ul class='nav navbar-nav' id='n1' role='navegation'>
 				<li class="active"><a href='/'>Inicio</a></li>
 				<li><a href='/quizes'>CARTAS</a></li>
-<li><a href='/quizes?search=TABLERO'>TABLEROS</a></span></li>
+				<li><a href='/quizes?search=TABLERO'>TABLEROS</a></span></li>
 			<!--	<li><a href='/quizes?search=%C2%BFQu%C3%A9+el%C3%ADcula+es%3F'>Fotogramas</a></span></li>
 <li><a href='/quizes?search=%C2%BFGrupo'>Musical</a></span></li>
 <li><a href='/quizes?search=%C2%BFQui%C3%A9n+es%3F'>¿Quién es?</a></span></li>
@@ -46,7 +46,7 @@
 				<li><a href='/author'>Más...</a></span></li>
 				<li><a href='/statistics'><small>Estadisticas</small></a></li>
 			</ul>
-			<ul class='main nav navbar-nav navbar-right' id='h1'>
+			<ul class='nav navbar-nav navbar-right' id='h1'>
 			<li>
 			<%if(!session.user){%>
 			  <a href="/login"><span class="right glyphicon glyphicon-log-in"> Login</span></a>
@@ -59,7 +59,7 @@
 			</div>		
 	 </div>
 	</nav>
-			
+	</header>		
 		<section class='main container-fluid text-center' id='s1'>
 			<% if(errors.length){ %>
 			<span id='ErrorMsgs'>
@@ -73,14 +73,14 @@
  
  <%- body %></div>
 </section>
-<section class='main container-fluid text-center' id='Juego'>
+<section class='main container-fluid text-center' id='s2'>
 <div class="container-fluid thumbnail">
 <div ondrop="drop(event)" ondragover="allowDrop(event)" style="background-color:blue">
 <img id="dado" draggable="true" ondragstart="tira()" class="img-responsive dado" alt="dado" src="https://www.dropbox.com/s/pu8mfr0og2mxz6n/dado.gif?dl=1" onclick="para()" ondblclick="tira()" style="width:20%;">
 
 <span><img draggable="true" ondragstart="drag(event)" class="ficha" alt="ficha azul" style="color:blue;width:10%;" src="https://www.dropbox.com/s/o6j5hr8vis3rksz/newgarden-trivial.png?dl=1"></img></span>
  
- <span class="glyphicon glyphicon-tower ficha" style="border: 1px solid #999;color:blue"></span>
+ <span class="glyphicon glyphicon-tower ficha" style="color:blue"></span>
  <span class="glyphicon glyphicon-tower ficha" style="color:brown"></span>
  <span class="glyphicon glyphicon-tower ficha" style="color:pink"></span>
  <span class="glyphicon glyphicon-tower ficha" style="color:yellow"></span>
@@ -99,6 +99,7 @@
  
 		</footer>
 	<script>
+	
 var dado = document.getElementById ("dado");
 var tiradas=["https://www.dropbox.com/s/92om1giidyk3lyv/01.png?dl=1", "https://www.dropbox.com/s/ciafr1casuiv18y/02.png?dl=1","https://www.dropbox.com/s/wc39zmg7d4t5cmo/03.png?dl=1","https://www.dropbox.com/s/ewvkou70yvpnh8r/04.png?dl=1","https://www.dropbox.com/s/4n2ge9zrn4i6y12/05.png?dl=1","https://www.dropbox.com/s/cbaq0blxfarqzie/06.png?dl=1"];
 var alea=Math.floor(6*Math.random());
@@ -133,6 +134,7 @@ function tira(){
       // }  
      });
     }); */
+    
     function allowDrop(ev) {
     ev.preventDefault();
 }
