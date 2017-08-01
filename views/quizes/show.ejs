@@ -17,8 +17,8 @@
  <%}else if(quiz.pregunta=='Skype'){%>
  </div>
  <div class="skype-chat"></div>
+ <script src="https://latest-swc.cdn.skype.com/sdk/0.24.37/sdk.min.js"></script>
  <span class="skype-button rectangle " data-contact-id="Joselon79"></span>
-<script src="https://latest-swc.cdn.skype.com/sdk/0.24.37/sdk.min.js"></script>
  <div class="skype-button bubble" data-contact-id="Joselon79"></div>
  <script>
  SkypeWebControl.SDK.start();
@@ -26,7 +26,7 @@
     ConversationId: 'Joselon79',
     ConversationType: 'agent'
 });
- </scritp>
+ </script>
  <%}else if(quiz.pregunta.substr(0,7)=='TABLERO'){%>
 <script>
 var tiradas=["/images/01.png", "/images/02.png","/images/03.png","/images/04.png","/images/05.png","/images/06.png"];
