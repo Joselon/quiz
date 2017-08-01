@@ -14,20 +14,8 @@
 </div>
 </form>
  <br><a class="botonText" href="<%= quiz.id %>/ahorcado"><button id="botonAhorcado" class="boton rojo redondo"><small>Pista-AHORCADO <span class="glyphicon glyphicon-text-height"></span></button></small></a><br>
- <%}else if(quiz.pregunta=='Skype'){%>
- </div>
- 
- <script src="https://latest-swc.cdn.skype.com/sdk/0.24.37/sdk.min.js"></script>
- 
- <div class="skype-button bubble" data-contact-id="Joselon79"></div>
- <div class="skype-chat"></div>
- <script>
- SkypeWebControl.SDK.start();
- /*SkypeWebControl.SDK.Chat.startChat({
- 	ConversationId: 'Joselon79',
- 	ConversationType: 'agent'
- });*/
- </script>
+ <br>
+</div>
  <%}else if(quiz.pregunta.substr(0,7)=='TABLERO'){%>
 <script>
 var tiradas=["/images/01.png", "/images/02.png","/images/03.png","/images/04.png","/images/05.png","/images/06.png"];
@@ -89,10 +77,27 @@ COGE EL DADO Y MUEVE FICHA
 		<button type="submit" id="botonborrar" onClick="return confirm('Borrar: <%=quiz.pregunta %>');"> <span class="glyphicon glyphicon-trash"></span>
 		</button>
         </div>
-		</form>
-	    <%}%>
-	    <br>
+	<br>
 </div>
+		</form>
+	    <%}else if(quiz.pregunta=='Skype'){%>
+ </div>
+ </div>
+ 
+ 
+ <div class="skype-button bubble" data-contact-id="Joselon79"></div>
+ <script src="https://latest-swc.cdn.skype.com/sdk/0.24.37/sdk.min.js"></script>
+ <div class="skype-chat"></div>
+ <script>
+ SkypeWebControl.SDK.start();
+ /*SkypeWebControl.SDK.Chat.startChat({
+ 	ConversationId: 'Joselon79',
+ 	ConversationType: 'agent'
+ });*/
+ </script>
+	    <%}%>
+	    
+	    
 <p><a href="/quizes/<%=quiz.id%>/comments/new"><button>Nuevo comentario <span class="glyphicon glyphicon-pencil"></span></button></a></p>
 
 <p><strong>Comentarios:</strong></p>
