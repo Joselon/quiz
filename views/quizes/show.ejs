@@ -16,16 +16,17 @@
  <br><a class="botonText" href="<%= quiz.id %>/ahorcado"><button id="botonAhorcado" class="boton rojo redondo"><small>Pista-AHORCADO <span class="glyphicon glyphicon-text-height"></span></button></small></a><br>
  <%}else if(quiz.pregunta=='Skype'){%>
  </div>
- <div class="skype-chat"></div>
+ 
  <script src="https://latest-swc.cdn.skype.com/sdk/0.24.37/sdk.min.js"></script>
- <span class="skype-button rectangle " data-contact-id="Joselon79"></span>
+ 
  <div class="skype-button bubble" data-contact-id="Joselon79"></div>
+ <div class="skype-chat"></div>
  <script>
  SkypeWebControl.SDK.start();
- SkypeWebControl.SDK.Chat.startChat({
+ /*SkypeWebControl.SDK.Chat.startChat({
  	ConversationId: 'Joselon79',
  	ConversationType: 'agent'
- });
+ });*/
  </script>
  <%}else if(quiz.pregunta.substr(0,7)=='TABLERO'){%>
 <script>
