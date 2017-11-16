@@ -1,6 +1,6 @@
 <h3> Bienvenida a <%=title%></h3>
 <div class="thumbnail"><a href="/quizes"><img
-    src="https://www.dropbox.com/s/6ao2hfei012n1am/quizIcon.jpg?dl=1" class="img-responsive img-circle" alt="Guarda la pagina a tu pantalla de inicio"/></a>
+    src="https://www.dropbox.com/s/6ao2hfei012n1am/quizIcon.jpg?raw=1" class="img-responsive img-circle" alt="Guarda la pagina a tu pantalla de inicio"/></a>
  </div>
 <p>El portal donde podrá crear sus juegos de preguntas! 
 <small>
@@ -8,11 +8,12 @@
 </small>
 </p>
 <br>
+<button type="button" class="btn boton rojo redondo" onclick="dameUna();"><a id="Escoge" class="botonText"><span class="glyphicon glyphicon-hand-down"></span><small>Saca una al azar de  <span class="badge">300</span> </small></a></button>
 <button><a href='/quizes?search=TABLERO'>COMENZAR</a></button>
 <br>
 <div class="thumbnail">
 <img
-    src="https://www.dropbox.com/s/r77ovl6uogyb607/QuizGuia.jpg?dl=1" class="img-responsive" alt="Guia"/>
+    src="https://www.dropbox.com/s/r77ovl6uogyb607/QuizGuia.jpg?raw=1" class="img-responsive" alt="Guia"/>
     <div class="caption">
           <p>1.Filtra por la categoría<br>
                2.Saca una pregunta al azar<br>
@@ -24,3 +25,10 @@
 <p><small>Podéis consultar directamente las preguntas comentadas desde estadísticas pinchando en el número de preguntas con comentarios.</small></p>
 <h4> Próximamente más novedades...</h4>
 
+<script>
+function dameUna(){
+ var total=300;
+ var aleatoria=Math.floor(total*Math.random()+1); 
+$("#Escoge").attr("href",'quizes/'+aleatoria;
+}
+</script>
