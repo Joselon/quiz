@@ -273,7 +273,7 @@ function dibujaAhorcado(numerrores){
 
 </script>
 <div> <%= quiz.pregunta %>
-<%if(quiz.Comments[0]!==null){var comentario='';var autoria='';%>
+<%if(typeof(quiz.Comments[0])!== 'undefined'){var comentario='';var autoria='';%>
 	
 	<%if(quiz.Comments[0].publicado ||session.user){%>
 		<%if(quiz.Comments[0].texto.indexOf('(')!=-1){comentario=quiz.Comments[0].texto.substr(0,quiz.Comments[0].texto.indexOf('(')); autoria=quiz.Comments[0].texto.substr(quiz.Comments[0].texto.indexOf('('),quiz.Comments[0].texto.length);}
