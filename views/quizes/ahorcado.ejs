@@ -273,6 +273,13 @@ function dibujaAhorcado(numerrores){
 
 </script>
 <div> <%= quiz.pregunta %>
+<%var comentario='';var autoria='';%>
+	
+	<%if(quiz.Comments[0].publicado ||session.user){%>
+		<%if(quiz.Comments[0].texto.indexOf('(')!=-1){comentario=quiz.Comments[0].texto.substr(0,quiz.Comments[0].texto.indexOf('(')); autoria=quiz.Comments[0].texto.substr(quiz.Comments[0].texto.indexOf('('),quiz.Comments[0].texto.length);}
+		else{ comentario=quiz.Comments[0].texto;autoria=''} %>
+        <div class='container comenteiner'><p style="border: white 8px outset"><%if(comentario.substr(0,3)=='img'){var $enlace=comentario.substring(4)%> <img class="img-responsive" src="<%=$enlace%>" alt="<%=$enlace%>"><p><small><%=autoria%></small> </p></div>
+            <%}}%>
 <div id="letras">
 </div>
 <div id="botonesletras"></div>
