@@ -1,3 +1,24 @@
+<script>
+var idPregunta=0;
+var idContenido=0;
+var my_form;
+var my_tb;
+var comentarioEditar='Texto comentario';
+function editaContenido(idPregunta,idContenido,comentarioEditar){
+	
+ my_form=document.createElement('FORM');
+ my_form.method='POST';
+ my_form.action='/quizes/'+idPregunta+'/comments/'+idContenido+'/update';
+ my_tb=document.createElement('INPUT');
+ my_tb.setAttribute('id','comment');
+ my_tb.type='textarea';
+ my_tb.name='comment[texto]';
+ my_tb.setAttribute('style','width:100%');
+ my_tb.value=comentarioEditar;
+ my_form.appendChild(my_tb);
+ document.getElementById('edita'+idContenido).appendChild(my_form);
+ };
+ </script>
 <a href="javascript:history.back(1);"><button type="button"><span class="glyphicon glyphicon-hand-left"></span> Volver</button></a>
 <a href="/quizes"><button type="button"> Ir a Preguntas</button></a>
 <div style='border-style:solid;border-color:<%=quiz.tema %>;
@@ -132,7 +153,8 @@ COGE EL DADO Y MUEVE FICHA
                             Borrar
                         </button>
 		</form>
-			
+		<button type="button" onclick="editaContenido(<%=quiz.id %>,<%=quiz.Comments[index].id%>,'<%=quiz.Comments[index].texto%>')" > Editar <span class="glyphicon glyphicon-pencil"></span></button>
+						<div id="edita<%=quiz.Comments[index].id%>" class="form-group container"></div>	
 		<%}%>
 		</p></div>
 	<%}%>
