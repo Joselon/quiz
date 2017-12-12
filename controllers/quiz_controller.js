@@ -42,6 +42,29 @@ exports.index=function(req, res){
 		});
   } 
   if(req.query.search.charAt(0)=='^'){
+
+   if(req.query.search.charAt(1)=='¿'){
+//filtro por tipo
+var searchAux= req.query.search.replace("^", "");
+	  searchAux=searchAux.replace(/\s+/g, "%");
+   	//Añadimos % al principio y el final
+   	if (searchAux.charAt(0)!='%'){
+	searchAux="%"+searchAux;
+   	}
+   	if(searchAux.charAt(searchAux.length-1)!='%'){
+	searchAux=searchAux+"%";
+   	}
+  	//filtramos
+   	models.Quiz.findAll({where:{pregunta:{$ilike:searchAux}},
+			order:[["pregunta","ASC"]]}).then(function(quizes){
+		res.render('quizes/index',{quizes:quizes, errors:[],urlBusqueda:urlBusqueda});
+		});
+	  
+ }
+
+
+}
+else{
    //filtramos por tema
 	  var searchAux =req.query.search.replace("^", "");
 	  if(searchAux=='null'){
@@ -57,6 +80,7 @@ exports.index=function(req, res){
 		res.render('quizes/index',{quizes:quizes, errors:[],urlBusqueda:urlBusqueda});
 		});}
   }
+}
   else{
 	  var searchAux= req.query.search;
           searchAux=searchAux.toUpperCase();
