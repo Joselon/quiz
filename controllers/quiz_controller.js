@@ -59,8 +59,6 @@ var searchAux= req.query.search.replace("^", "");
 			order:[["pregunta","ASC"]]}).then(function(quizes){
 		res.render('quizes/index',{quizes:quizes, errors:[],urlBusqueda:urlBusqueda});
 		});
-	  
- }
 
 
 }
