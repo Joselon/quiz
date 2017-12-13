@@ -39,7 +39,7 @@
 <table class="table table-hover" id="tabpreg">
 
 <% var i; for (i=0;i<quizes.length;i++) { %>
-	<tr><td align="left" id="preg"><span class="badge" id="Tema" style="color:<%= quizes[i].tema %>;">@<span class="glyphicon glyphicon-th-list"></span></span><a  href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a>
+	<tr><td align="left" id="preg"><span class="badge" id="Tema" style="color:<%= quizes[i].tema %>;">@<span class="glyphicon glyphicon-th-list"></span></span><a  href="quizes/<%= quizes[i].id %>/ahorcado"><%= quizes[i].pregunta %></a>
 	    </td>
 	    <%if (session.user) {%>
 	      <td id="botoneditar"><a href="quizes/<%= quizes[i].id %>/edit"><button><span class="glyphicon glyphicon-cog"></span></button></a></td>
@@ -62,7 +62,7 @@
 function dameUna(){
 <%total=quizes.length; aleatoria=Math.floor(total*Math.random()+1); if(typeof(quizes[aleatoria]) !="undefined"){%>
 
-$("#Escoge").attr("href",'quizes/<%=quizes[aleatoria].id%>');
+$("#Escoge").attr("href",'quizes/<%=quizes[aleatoria].id%>/ahorcado');
 
 <%}else{%>
 $("#Escoge").attr("href",'quizes/');
