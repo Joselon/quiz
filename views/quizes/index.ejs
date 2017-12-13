@@ -41,6 +41,7 @@
 <% var i; for (i=0;i<quizes.length;i++) { %>
 	<tr><td align="left" id="preg"><span class="badge" id="Tema" style="color:<%= quizes[i].tema %>;">@<span class="glyphicon glyphicon-th-list"></span></span><a  href="quizes/<%= quizes[i].id %>/ahorcado"><%= quizes[i].pregunta %></a>
 	    </td>
+<td id="botontarjeta"><a href="quizes/<%= quizes[i].id %>"><button><span class="glyphicon glyphicon-pencil"></span></button></a></td>
 	    <%if (session.user) {%>
 	      <td id="botoneditar"><a href="quizes/<%= quizes[i].id %>/edit"><button><span class="glyphicon glyphicon-cog"></span></button></a></td>
 	      <td id="botonborrar" >
