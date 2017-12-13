@@ -30,7 +30,7 @@
 </div>
 </form>
 <br>
-<button type="button" class="btn boton rojo redondo" onclick="dameUna();"><a id="Escoge" class="botonText"><span class="glyphicon glyphicon-hand-down"></span><small>Saca una al azar de  <span class="badge"><%=quizes.length%></span> </small></a></button>
+<button type="button" class="btn boton rojo redondo" onclick="dameUna2();"><a id="Escoge2" class="botonText"><span class="glyphicon glyphicon-hand-down"></span><small>Saca una al azar de  <span class="badge"><%=quizes.length%></span> </small></a></button>
 <%if(session.user){%>
 <a id="BotonCrea" href="/quizes/new"><button type="button">Crear pregunta <span class="glyphicon glyphicon-pencil"></span></button></a>
 <%}%>
@@ -60,13 +60,13 @@
 <p>
 
 <script>
-function dameUna(){
+function dameUna2(){
 <%total=quizes.length; aleatoria=Math.floor(total*Math.random()+1); if(typeof(quizes[aleatoria]) !="undefined"){%>
 
-$("#Escoge").attr("href",'quizes/<%=quizes[aleatoria].id%>/ahorcado');
+$("#Escoge2").attr("href",'quizes/<%=quizes[aleatoria].id%>/ahorcado');
 
 <%}else{%>
-$("#Escoge").attr("href",'quizes/');
+$("#Escoge2").attr("href",'quizes/');
 <%}%>
 }
 </script>
