@@ -283,6 +283,7 @@ function dibujaAhorcado(numerrores){
 		else{ comentario=quiz.Comments[0].texto;autoria=''} %>
         <div class='container comenteiner'><p style="border: white 8px outset"><%if(comentario.substr(0,3)=='img'){var $enlace=comentario.substring(4)%> <img class="img-responsive" src="<%=$enlace%>" alt="<%=$enlace%>"><p><small><%=autoria%></small> </p></div>
 <%}else if(comentario.substr(0,5)=='audio'){var $enlace=comentario.substring(6)%> <audio controls preload="none" style="width:100%"><source src="<%=$enlace%>" type="audio/mpeg" >Your browser does not support the audio tag.</audio><p><small><%=autoria%></small> </p></div>
+<%}else if(comentario.substr(0,5)=='video'){var $enlace=comentario.substring(6)%> <video controls preload="none" style="width:100%"><source src="<%=$enlace%>" type="video/mp4" > Your browser does not support the video tag.</video><p><small><%=autoria%></small> </p></div>
             <%}}}%>
 <div id="letras">
 </div>
