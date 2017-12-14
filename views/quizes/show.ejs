@@ -152,7 +152,7 @@ COGE EL DADO Y MUEVE FICHA
                         <button type="submit" id="botonborrar" onClick="return confirm('Borrar: <%=quiz.Comments[index].id%>');">
                             Borrar
                         </button>
-		</form><br>
+		</form></p>
 		<button type="button" onclick="editaContenido(<%=quiz.id %>,<%=quiz.Comments[index].id%>,'<%=quiz.Comments[index].texto%>')" > Editar <span class="glyphicon glyphicon-pencil"></span></button>
 						<div id="edita<%=quiz.Comments[index].id%>" class="form-group container"></div>	
 		<%}%>
