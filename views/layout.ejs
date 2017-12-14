@@ -12,41 +12,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"> </script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<script>
-var tiradas=["/images/01.png", "/images/02.png","/images/03.png","/images/04.png","/images/05.png","/images/06.png"];
-var alea=Math.floor(6*Math.random());
- function para(){
-alea=Math.floor(6*Math.random());
- $("#dado").attr("src",tiradas[alea]);
-}
 
-function tira(){
- $("#dado").attr("src","/images/dado.gif");
-}
- $(function () {
-        $(".ficha").draggable({            
-            stack: ".ficha",
-	   // helper: "clone",
-	  //  appendTo:"#Tablero"
-        });
-    });
-     $(function () {
-        $(".dado").draggable({            
-            stack: ".dado",
-	    start:tira,
-	    stop:para
-        });
-    });
-    
-   $(function () {
-    $("#Tablero").droppable({
-      stack: ".ficha",
-     // drop: function(e, ui){  
-      //  $(ui.draggable).clone().appendTo($(this));  
-      // }  
-     });
-    });
-</script>
   <!--  <link rel='stylesheet' type='text/css' href='/stylesheets/style.css' />
     <link rel='stylesheet'
 	 type='text/css'
@@ -189,21 +155,7 @@ function tira(){
  
  <%- body %></div>
 </section>
-<section class='main container-fluid text-center' id='Juego'>
-<div class="container-fluid thumbnail" style="background-color:white">
-<img id="dado" class="img-responsive dado" alt="dado" src="/images/dado.gif" style="width:20%;">
-<span><img class="ficha" alt="ficha azul" style="color:blue;width:10%;" src="https://www.dropbox.com/s/o6j5hr8vis3rksz/newgarden-trivial.png?raw=1"></img></span>
- 
- <span class="glyphicon glyphicon-tower ficha" style="color:blue"></span>
- <span class="glyphicon glyphicon-tower ficha" style="color:brown"></span>
- <span class="glyphicon glyphicon-tower ficha" style="color:pink"></span>
- <span class="glyphicon glyphicon-tower ficha" style="color:yellow"></span>
- <span class="glyphicon glyphicon-tower ficha" style="color:green"></span>
- <span class="glyphicon glyphicon-tower ficha" style="color:orange"></span>
- <br>
- <img class="img-responsive" id="Tablero" src="https://www.dropbox.com/s/mzxagusl4ccs8dv/TableroQuiz.jpg?raw=1" alt="TableroDropable">
-</div>
-		</section>
+
 		
 		<footer class='main container-fluid text-center' id='f1'>
 <button type="button" class="btn boton rojo redondo" onclick="dameUna();"><a id="Escoge" class="botonText"><span class="glyphicon glyphicon-hand-down"></span><small>Saca una al azar de  <span class="badge">300</span> </small></a></button>
