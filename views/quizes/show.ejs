@@ -141,11 +141,11 @@ COGE EL DADO Y MUEVE FICHA
             <%}%>
 		<%if(session.user&&!quiz.Comments[index].publicado){%>
 			<a href="/quizes/<%= quiz.id %>/comments/<%=quiz.Comments[index].id%>/publish">
-				<button>Publicar</button></a>
+				<button>Publicar</button></a></p>
 		<%}%>
                 <%if(session.user&&quiz.Comments[index].publicado){%>
 			<a href="/quizes/<%= quiz.id %>/comments/<%=quiz.Comments[index].id%>/hide">
-				<button>Ocultar</button></a><br>
+				<button>Ocultar</button></a></p>
 		<%}%>
                 <%if(session.user){%>
                          <form method="post" action="<%= quiz.id %>/comments/<%=quiz.Comments[index].id%>?_method=delete">
