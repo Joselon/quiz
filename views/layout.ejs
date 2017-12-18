@@ -182,14 +182,14 @@
 
 		
 		<footer class='main container-fluid text-center' id='f1'>
-<button type="button" class="btn boton rojo redondo" onclick="dameUna();"><a id="Escoge" class="botonText"><span class="glyphicon glyphicon-hand-down"></span><small>Saca una al azar de  <span class="badge">320</span> </small></a></button><br>
+<button type="button" class="btn boton rojo redondo" onclick="dameUna();"><a id="Escoge" class="botonText"><span class="glyphicon glyphicon-hand-down"></span><small>Saca una al azar de  <span class="badge">330</span> </small></a></button><br>
                         <%if(session.user){%>
                         <a href='https://github.com/Joselon/quiz' target="_blank"> Página Github del proyecto</a>
                         <%}%>
  <span class="glyphicon glyphicon-knight"></span>
  <script>
 function dameUna(){
- var total=320;
+ var total=330;
  var aleatoria=Math.floor(total*Math.random()+1); 
 $("#Escoge").attr("href",'https://joselonode.herokuapp.com/quizes/'+aleatoria+ '/ahorcado');
 }
