@@ -76,7 +76,7 @@
 <section class='main container-fluid text-center' id='s2'>
 <div class="container-fluid thumbnail">
 <div ondrop="drop(event)" ondragover="allowDrop(event)" style="background-color:blue">
-<img id="dado" draggable="true" ondragstart="tira()" class="img-responsive dado draggable" alt="dado" src="https://www.dropbox.com/s/pu8mfr0og2mxz6n/dado.gif?raw=1" onclick="para()" ondblclick="tira()" style="width:20%;">
+<img id="dado" draggable="true" ondragstart="tira()" ondragstop="para()" class="img-responsive dado draggable" alt="dado" src="https://www.dropbox.com/s/pu8mfr0og2mxz6n/dado.gif?raw=1" onclick="para()" ondblclick="tira()" style="width:20%;">
 
 <span><img draggable="true" ondragstart="drag(event)" class="ficha draggable" alt="ficha azul" style="color:blue;width:10%;" src="https://www.dropbox.com/s/o6j5hr8vis3rksz/newgarden-trivial.png?raw=1"></img></span>
  
@@ -111,43 +111,8 @@ alea=Math.floor(6*Math.random());
 function tira(){
  dado.src="https://www.dropbox.com/s/pu8mfr0og2mxz6n/dado.gif?raw=1";
 }
- $(function () {
-        $(".ficha").draggable({            
-            stack: ".ficha",
-	   // helper: "clone",
-	  //  appendTo:"#Tablero"
-        });
-    });
-     $(function () {
-        $(".dado").draggable({            
-            stack: ".dado",
-	    start:tira,
-	    stop:para
-        });
-    });
-    
-   $(function () {
-    $("#Tablero").droppable({
-      stack: ".ficha",
-     // drop: function(e, ui){  
-      //  $(ui.draggable).clone().appendTo($(this));  
-      // }  
-     });
-    }); 
-    
-    function allowDrop(ev) {
-    ev.preventDefault();
-}
+  
 
-function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-}
-
-function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-}
 // target elements with the "draggable" class
 interact('.draggable')  
   .draggable({
