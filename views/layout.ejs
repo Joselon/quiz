@@ -80,14 +80,14 @@
 
 <span><img draggable="true" ondragstart="drag(event)" class="ficha draggable" alt="ficha azul" style="color:blue;width:10%;" src="https://www.dropbox.com/s/o6j5hr8vis3rksz/newgarden-trivial.png?raw=1"></img></span>
  
- <span class="glyphicon glyphicon-tower ficha" style="color:blue"></span>
- <span class="glyphicon glyphicon-tower ficha" style="color:brown"></span>
- <span class="glyphicon glyphicon-tower ficha" style="color:pink"></span>
- <span class="glyphicon glyphicon-tower ficha" style="color:yellow"></span>
- <span class="glyphicon glyphicon-tower ficha" style="color:green"></span>
- <span class="glyphicon glyphicon-tower ficha" style="color:orange"></span></div>
+ <span class="glyphicon glyphicon-tower ficha draggable" style="color:blue"></span>
+ <span class="glyphicon glyphicon-tower ficha draggable" style="color:brown"></span>
+ <span class="glyphicon glyphicon-tower ficha draggable" style="color:pink"></span>
+ <span class="glyphicon glyphicon-tower ficha draggable" style="color:yellow"></span>
+ <span class="glyphicon glyphicon-tower ficha draggable" style="color:green"></span>
+ <span class="glyphicon glyphicon-tower ficha draggable" style="color:orange"></span></div>
  <br>
- <div ondrop="drop(event)" ondragover="allowDrop(event)"><img class="img-responsive dropzone"  id="Tablero" src="https://www.dropbox.com/s/mzxagusl4ccs8dv/TableroQuiz.jpg?dl=1" alt="TableroDropable"></div>
+ <div class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)"><img class="img-responsive"  id="Tablero" src="https://www.dropbox.com/s/mzxagusl4ccs8dv/TableroQuiz.jpg?raw=1" alt="TableroDropable"></div>
 </div>
 		</section>
 		
@@ -111,7 +111,7 @@ alea=Math.floor(6*Math.random());
 function tira(){
  dado.src="https://www.dropbox.com/s/pu8mfr0og2mxz6n/dado.gif?raw=1";
 }
-/* $(function () {
+ $(function () {
         $(".ficha").draggable({            
             stack: ".ficha",
 	   // helper: "clone",
@@ -133,7 +133,7 @@ function tira(){
       //  $(ui.draggable).clone().appendTo($(this));  
       // }  
      });
-    }); */
+    }); 
     
     function allowDrop(ev) {
     ev.preventDefault();
