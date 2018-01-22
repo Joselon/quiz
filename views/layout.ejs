@@ -75,10 +75,10 @@
 </section>
 <section class='main container-fluid text-center' id='s2'>
 <div class="container-fluid thumbnail">
-<div class="dropzone" ondrop="drop(event)" ondragover="allowDrop(event)" style="style="background-image: url('https://www.dropbox.com/s/mzxagusl4ccs8dv/TableroQuiz.jpg?raw=1');background-size: contain;background-repeat: no-repeat;">
-<img id="dado" draggable="true" ondragstart="tira()" ondragstop="para()" class="img-responsive dado draggable" alt="dado" src="https://www.dropbox.com/s/pu8mfr0og2mxz6n/dado.gif?raw=1" onclick="para()" ondblclick="tira()" style="width:20%;">
+<div class="dropzone" style="style="background-image: url('https://www.dropbox.com/s/mzxagusl4ccs8dv/TableroQuiz.jpg?raw=1');background-size: contain;background-repeat: no-repeat;">
+<img id="dado" class="img-responsive dado draggable" alt="dado" src="https://www.dropbox.com/s/pu8mfr0og2mxz6n/dado.gif?raw=1" onclick="para()" ondblclick="tira()" style="width:20%;">
 
-<span><img draggable="true" ondragstart="drag(event)" class="ficha draggable" alt="ficha azul" style="color:blue;width:10%;" src="https://www.dropbox.com/s/o6j5hr8vis3rksz/newgarden-trivial.png?raw=1"></img></span>
+<span><img class="ficha draggable" alt="ficha azul" style="color:blue;width:10%;" src="https://www.dropbox.com/s/o6j5hr8vis3rksz/newgarden-trivial.png?raw=1"></img></span>
  
  <span class="glyphicon glyphicon-tower ficha draggable" style="color:blue"></span>
  <span class="glyphicon glyphicon-tower ficha draggable" style="color:brown"></span>
@@ -157,6 +157,7 @@ interact('.dropzone').dropzone({
     event.target.classList.add('drop-active');
   },
   ondragenter: function (event) {
+    tira();
     var draggableElement = event.relatedTarget,
         dropzoneElement = event.target;
 
