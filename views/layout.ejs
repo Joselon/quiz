@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-<link rel="apple-touch-icon-precomposed" href="https://www.dropbox.com/s/6ao2hfei012n1am/quizIcon.jpg?dl=1"/>
+<link rel="apple-touch-icon-precomposed" href="/images/Juegos-Reunidos-1.jpg"/>
 	<meta charset='utf-8'>
     <title>JNR</title>
      <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -76,9 +76,9 @@
 <section class='main container-fluid text-center' id='s2'>
 <div class="container-fluid thumbnail">
 <div ondrop="drop(event)" ondragover="allowDrop(event)" style="background-color:blue">
-<img id="dado" draggable="true" ondragstart="tira()" class="img-responsive dado" alt="dado" src="https://www.dropbox.com/s/pu8mfr0og2mxz6n/dado.gif?dl=1" onclick="para()" ondblclick="tira()" style="width:20%;">
+<img id="dado" draggable="true" ondragstart="tira()" class="img-responsive dado draggable" alt="dado" src="https://www.dropbox.com/s/pu8mfr0og2mxz6n/dado.gif?raw=1" onclick="para()" ondblclick="tira()" style="width:20%;">
 
-<span><img draggable="true" ondragstart="drag(event)" class="ficha" alt="ficha azul" style="color:blue;width:10%;" src="https://www.dropbox.com/s/o6j5hr8vis3rksz/newgarden-trivial.png?dl=1"></img></span>
+<span><img draggable="true" ondragstart="drag(event)" class="ficha draggable" alt="ficha azul" style="color:blue;width:10%;" src="https://www.dropbox.com/s/o6j5hr8vis3rksz/newgarden-trivial.png?raw=1"></img></span>
  
  <span class="glyphicon glyphicon-tower ficha" style="color:blue"></span>
  <span class="glyphicon glyphicon-tower ficha" style="color:brown"></span>
@@ -87,7 +87,7 @@
  <span class="glyphicon glyphicon-tower ficha" style="color:green"></span>
  <span class="glyphicon glyphicon-tower ficha" style="color:orange"></span></div>
  <br>
- <div ondrop="drop(event)" ondragover="allowDrop(event)"><img class="img-responsive"  id="Tablero" src="https://www.dropbox.com/s/mzxagusl4ccs8dv/TableroQuiz.jpg?dl=1" alt="TableroDropable"></div>
+ <div ondrop="drop(event)" ondragover="allowDrop(event)"><img class="img-responsive dropzone"  id="Tablero" src="https://www.dropbox.com/s/mzxagusl4ccs8dv/TableroQuiz.jpg?dl=1" alt="TableroDropable"></div>
 </div>
 		</section>
 		
@@ -101,7 +101,7 @@
 	<script>
 	
 var dado = document.getElementById ("dado");
-var tiradas=["https://www.dropbox.com/s/92om1giidyk3lyv/01.png?dl=1", "https://www.dropbox.com/s/ciafr1casuiv18y/02.png?dl=1","https://www.dropbox.com/s/wc39zmg7d4t5cmo/03.png?dl=1","https://www.dropbox.com/s/ewvkou70yvpnh8r/04.png?dl=1","https://www.dropbox.com/s/4n2ge9zrn4i6y12/05.png?dl=1","https://www.dropbox.com/s/cbaq0blxfarqzie/06.png?dl=1"];
+var tiradas=["https://www.dropbox.com/s/92om1giidyk3lyv/01.png?raw=1", "https://www.dropbox.com/s/ciafr1casuiv18y/02.png?raw=1","https://www.dropbox.com/s/wc39zmg7d4t5cmo/03.png?raw=1","https://www.dropbox.com/s/ewvkou70yvpnh8r/04.png?raw=1","https://www.dropbox.com/s/4n2ge9zrn4i6y12/05.png?raw=1","https://www.dropbox.com/s/cbaq0blxfarqzie/06.png?raw=1"];
 var alea=Math.floor(6*Math.random());
  function para(){
 alea=Math.floor(6*Math.random());
@@ -109,7 +109,7 @@ alea=Math.floor(6*Math.random());
 }
 
 function tira(){
- dado.src="https://www.dropbox.com/s/pu8mfr0og2mxz6n/dado.gif?dl=1";
+ dado.src="https://www.dropbox.com/s/pu8mfr0og2mxz6n/dado.gif?raw=1";
 }
 /* $(function () {
         $(".ficha").draggable({            
