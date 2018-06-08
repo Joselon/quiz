@@ -37,6 +37,21 @@ body{
 }
 </style>
 <script>
+function voltea(){
+var caja2 = $('<div class="dialogletra bg-success" title="RESPUESTA"><p class="bg-success">R:<%=quiz.respuesta%></p> </div>');
+					caja2.dialog({
+					modal: true,
+					buttons: {
+						"Otra": function(){
+ var total=330;
+ var aleatoria=Math.floor(total*Math.random()+1); 
+ javascripy:window.location.href="http://joselonode.herokuapp.com/quizes/"+aleatoria+"/ahorcado";
+
+						},
+						"Volver": function(){javascript:history.back(1);}
+					}
+					});	
+}
 function esta(caracter, miarray){
   //console.log("buscando ", caracter, " en ", miarray)
   for(var j=0;j<miarray.length;j++){
@@ -285,10 +300,15 @@ function dibujaAhorcado(numerrores){
 <%}else if(comentario.substr(0,5)=='audio'){var $enlace=comentario.substring(6)%> <audio controls preload="auto" style="width:100%"><source src="<%=$enlace%>" type="audio/mpeg" >Your browser does not support the audio tag.</audio><p><small><%=autoria%></small> </p></div>
 <%}else if(comentario.substr(0,5)=='video'){var $enlace=comentario.substring(6)%> <video controls preload="auto" loop style="width:100%"><source src="<%=$enlace%>" type="video/mp4" > Your browser does not support the video tag.</video><p><small><%=autoria%></small> </p></div>           
 	   <%}}}%>
+<%if (session.user){%>
+<a class="right carousel-control" role="button" onclick="voltea();">
+<span class="glyphicon glyphicon-chevron-righ" aria-hidden="true"></span>
+<span class="sr-only"></span>
+</a>
+<%}%>
 <div id="letras">
 </div>
 <div id="botonesletras"></div>
-</div>
 <br>
 <button class="btn btn-default"><a  href='/quizes/<%=quiz.id%>'><span class="glyphicon glyphicon-hand-left"></span>Ir a la Tarjeta...</a>
 </button>
