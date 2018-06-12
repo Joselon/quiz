@@ -1,12 +1,12 @@
 #!/usr/bin/env node
-var debug = require('debug')('quiz');
+var debug = require('debug')('JNR');
 var app = require('../app');
 var fs=require("fs");
 var https=require("https");
 
 var options={
-	key: fs.readFileSync('certs/quiz-2015-key.pem').toString(),
-	cert:fs.readFileSync('certs/quiz-2015-cert.pem').toString()
+	key: fs.readFileSync('certs/jnr-2018-key.pem').toString(),
+	cert:fs.readFileSync('certs/jnr-2018-cert.pem').toString()
 };
 
 app.set('port', process.env.PORT || 3000);

@@ -27,31 +27,31 @@ var sequelize= new Sequelize(DB_name,user,pwd,
 			}
 		  );
 
-// Importar la definicion de la tabla Quiz en quiz.js
-var quiz_path=path.join(__dirname,'quiz');
-var Quiz= sequelize.import(quiz_path);
+// Importar la definicion de la tabla Juego en juego.js
+var juego_path=path.join(__dirname,'juego');
+var Juego= sequelize.import(juego_path);
 
-//Imiportar definicion de la tabla Commnet
-var comment_path=path.join(__dirname,'comment');
-var Comment=sequelize.import(comment_path);
+//Importar definicion de la tabla Commnet
+var contenido_path=path.join(__dirname,'contenido');
+var Contenido=sequelize.import(contenido_path);
 
-Comment.belongsTo(Quiz);
-Quiz.hasMany(Comment);
+Contenido.belongsTo(Juego);
+Juego.hasMany(Contenido);
 
-exports.Quiz=Quiz; // exportar definicion de tabla Quiz
-exports.Comment=Comment; //exportamos definicion de tabla Comment
+exports.Juego=Juego; // exportar definicion de tabla Juego
+exports.Contenido=Contenido; //exportamos definicion de tabla Contenido
 
-// sequelize.sync() crea e inicializa tabla de preguntas de DB
+// sequelize.sync() crea e inicializa tabla de juegos de DB
 sequelize.sync().then(function() {
  // then(..) ejecuta el manejador una vez creada la tabla
-  Quiz.count().then(function (count){
+  Juego.count().then(function (count){
    if(count==0) { // la tabla se inicia solo si esta vacia
-     Quiz.create({ pregunta: 'Capital de Italia',
-		   respuesta: 'Roma',
-		   tema: 'humanidades'});
-     Quiz.create({ pregunta: 'Capital de Portugal',
-		   respuesta: 'Lisboa',
-		   tema: 'humanidades'})
+     Juego.create({ juego: 'Parchis',
+		   descripcion: 'Tablero de parchís con 5 fichas clonables',
+		   tipo: 'dado'});
+     Juego.create({ juego: 'Dixit',
+		   descripcion: 'Tablero con fichas para jugar al Dixit',
+		   tipo: 'sinDado'})
    .then(function(){console.log('Base de flatos inicial izada')});
   };
  });
