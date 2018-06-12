@@ -5,7 +5,7 @@
 <div class="form-group">
 <label for="tema" class="rem">Filtro:</label>
 <button type="button" onclick="javascript:history.back(1);")><span class="glyphicon glyphicon-hand-left"></span> Volver</button>
-<select name="tema" onchange="javascript:window.open('/quizes?search=^'+document.form1.tema.options[document.form1.tema.selectedIndex].value,'_self');">
+<select name="tema" onchange="javascript:window.open('/juegos?search=^'+document.form1.tema.options[document.form1.tema.selectedIndex].value,'_self');">
  <option value="*" > CATEGORIA</option>
  <option value="null" >Sin respuesta</option>
  <option value="GhostWhite" >ENLACES</option>
@@ -18,31 +18,31 @@
 </select>
 </div>
 </form>
-<form method='get' action='/quizes'>
+<form method='get' action='/juegos'>
 <div class="form-group">
- <label for="search">Buscar Preguntas:</label> 
+ <label for="search">Buscar Juegos:</label> 
 <input type="text"  class="form-control" name="search"/>
  <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
 
 </div>
 </form>
 <br>
-<button type="button" class="btn boton rojo redondo" onclick="dameUna();"><a id="Escoge" class="botonText"><span class="glyphicon glyphicon-hand-down"></span><small>Saca una al azar de  <span class="badge"><%=quizes.length%></span> </small></a></button>
+<button type="button" class="btn boton rojo redondo" onclick="dameUna();"><a id="Escoge" class="botonText"><span class="glyphicon glyphicon-hand-down"></span><small>Saca una al azar de  <span class="badge"><%=juegos.length%></span> </small></a></button>
 <%if(session.user){%>
-<a id="BotonCrea" href="/quizes/new"><button type="button">Crear pregunta <span class="glyphicon glyphicon-pencil"></span></button></a>
+<a id="BotonCrea" href="/juegos/new"><button type="button">Crear pregunta <span class="glyphicon glyphicon-pencil"></span></button></a>
 <%}%>
 <br>
 <div class="table-responsive" style="background-color: #7e827a;box-shadow: -10px 5px black;">
 <table class="table table-hover" id="tabpreg">
 
-<% var i; for (i=0;i<quizes.length;i++) { %>
-	<tr><td align="left" id="preg"><span class="badge" id="Tema" style="color:<%= quizes[i].tema %>;">@<span class="glyphicon glyphicon-th-list"></span></span><a  href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a>
+<% var i; for (i=0;i<juegos.length;i++) { %>
+	<tr><td align="left" id="preg"><span class="badge" id="Tema" style="color:<%= juegos[i].tipo %>;">@<span class="glyphicon glyphicon-th-list"></span></span><a  href="juegos/<%= juegos[i].id %>"><%= juegos[i].juego %></a>
 	    </td>
 	    <%if (session.user) {%>
-	      <td id="botoneditar"><a href="quizes/<%= quizes[i].id %>/edit"><button><span class="glyphicon glyphicon-cog"></span></button></a></td>
+	      <td id="botoneditar"><a href="juegos/<%= juegos[i].id %>/edit"><button><span class="glyphicon glyphicon-cog"></span></button></a></td>
 	      <td id="botonborrar" >
-		<form method="post" action="quizes/<%= quizes[i].id %>?_method=delete">
-		<button type="submit" onClick="return confirm('Borrar: <%=quizes[i].pregunta %>');">
+		<form method="post" action="juegos/<%= juegos[i].id %>?_method=delete">
+		<button type="submit" onClick="return confirm('Borrar: <%=juegos[i].juego %>');">
 		<span class="glyphicon glyphicon-trash"></span>
 		</button>
 		</form>
@@ -57,12 +57,12 @@
 
 <script>
 function dameUna(){
-<%total=quizes.length; aleatoria=Math.floor(total*Math.random()+1); if(typeof(quizes[aleatoria]) !="undefined"){%>
+<%total=juegos.length; aleatoria=Math.floor(total*Math.random()+1); if(typeof(juegos[aleatoria]) !="undefined"){%>
 
-$("#Escoge").attr("href",'quizes/<%=quizes[aleatoria].id%>');
+$("#Escoge").attr("href",'juegos/<%=juegos[aleatoria].id%>');
 
 <%}else{%>
-$("#Escoge").attr("href",'quizes/');
+$("#Escoge").attr("href",'juegos/');
 <%}%>
 }
 </script>
